@@ -38,6 +38,15 @@ def fit(img: Image.Image, long_side: int = 1024, mult: int = 16) -> Image.Image:
     return img.resize((w, h), Image.LANCZOS)
 
 
+def gpu_name() -> str:
+    try:
+        import torch
+
+        return torch.cuda.get_device_name(0) if torch.cuda.is_available() else "cpu"
+    except Exception:
+        return "unknown"
+
+
 def build(model: str, offload: str | None):
     if model == "identity":
         return None
@@ -102,6 +111,7 @@ def main() -> None:
     if not todo:
         return
 
+    gpu = gpu_name()
     pipe = build(args.model, args.offload)
     for it in todo:
         src = Path(it["source"])
@@ -110,7 +120,7 @@ def main() -> None:
         with timed(args.results, "w2", args.model, it["item_id"], seed=args.seed,
                    prompt=it["prompt"], edit_type=it["edit_type"], repo=MODELS[args.model]["repo"],
                    steps=MODELS[args.model]["steps"], cfg=MODELS[args.model]["cfg"],
-                   size=list(img.size), offload=args.offload):
+                   size=list(img.size), offload=args.offload, gpu=gpu):
             result = edit(args.model, pipe, img, it["prompt"], args.seed)
         result.save(out_dir / f"{it['item_id']}.png")
         print("done", it["item_id"])
