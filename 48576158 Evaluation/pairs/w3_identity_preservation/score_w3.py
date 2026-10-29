@@ -33,6 +33,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
+from dataclasses import asdict  # noqa: E402
+
 from a1eval import Record, append, load  # noqa: E402
 from a1eval import metrics as M  # noqa: E402
 
@@ -85,6 +87,8 @@ def main() -> None:
     ap.add_argument("--metrics", nargs="+", default=ALL, choices=ALL)
     ap.add_argument("--models", nargs="*", help="default: every folder under outputs/w3")
     ap.add_argument("--calibrate", action="store_true", help="also write results/w3_calibration.json")
+    ap.add_argument("--redo", action="store_true",
+                    help="drop existing rows for the chosen --metrics first, then re-score them")
     args = ap.parse_args()
 
     items = list(csv.DictReader(open(args.items, encoding="utf-8")))
@@ -95,6 +99,13 @@ def main() -> None:
         calibrate(items, extra_dir, Path(args.results).with_name("w3_calibration.json"))
 
     models = args.models or sorted(p.name for p in root.iterdir() if p.is_dir())
+
+    if args.redo:
+        keep = [r for r in load(args.results) if r.metric not in set(args.metrics)]
+        rp = Path(args.results)
+        rp.write_text("".join(json.dumps(asdict(r), ensure_ascii=False) + "\n" for r in keep), encoding="utf-8")
+        print(f"--redo: dropped rows for {args.metrics}, {len(keep)} rows kept")
+
     have = {(r.model, r.item_id, r.metric) for r in load(args.results)}
 
     ref_emb: dict[str, object] = {}   # reference photo -> FaceNet embedding

@@ -70,7 +70,7 @@ def paired_table(df: pd.DataFrame, a: str, b: str) -> pd.DataFrame:
         mean, lo, hi = M.paired_bootstrap_diff(pair[a].tolist(), pair[b].tolist(), n_boot=10000, seed=0)
         out.append({"metric": metric, "n_items": len(pair), f"{a}_mean": pair[a].mean(),
                     f"{b}_mean": pair[b].mean(), "diff": mean, "lo": lo, "hi": hi,
-                    "significant": "yes" if (lo > 0) == (hi > 0) else "no",
+                    "significant": "yes" if (lo > 0 or hi < 0) else "no",   # a CI of exactly [0, 0] is not a difference
                     "higher_is_better": HIGHER_IS_BETTER.get(metric, True)})
     return pd.DataFrame(out)
 
@@ -82,8 +82,9 @@ def _bars(ax, sub: pd.DataFrame, group: str, models: list[str], title: str, ylab
     for i, m in enumerate(models):
         s = sub[sub["model"] == m].set_index(group).reindex(levels)
         off = (i - (len(models) - 1) / 2) * w
-        ax.bar(x + off, s["mean"], w, label=m, color=COLOUR.get(m, f"C{i}"),
-               yerr=[s["mean"] - s["lo"], s["hi"] - s["mean"]], capsize=3, error_kw={"lw": 1})
+        mean, lo, hi = (s[c].to_numpy(dtype=float) for c in ("mean", "lo", "hi"))
+        ax.bar(x + off, mean, w, label=m, color=COLOUR.get(m, f"C{i}"),
+               yerr=[mean - lo, hi - mean], capsize=3, error_kw={"lw": 1})
     ax.set_xticks(x, [LABEL.get(v, v) if group == "metric" else v for v in levels], rotation=0, fontsize=8)
     ax.set_title(title, fontsize=10)
     ax.set_ylabel(ylabel, fontsize=9)
@@ -136,8 +137,9 @@ def figures(df: pd.DataFrame, out: Path, calib: dict | None, show: bool):
     fig, axes = plt.subplots(1, 2, figsize=(9, 3.4))
     for ax, metric in zip(axes, ["latency_s", "peak_vram_gb"]):
         sub = ci_table(df[df["metric"] == metric], ["model"])
-        ax.bar(sub["model"], sub["mean"], 0.5, color=[COLOUR.get(m, "C0") for m in sub["model"]],
-               yerr=[sub["mean"] - sub["lo"], sub["hi"] - sub["mean"]], capsize=4, error_kw={"lw": 1})
+        mean, lo, hi = (sub[c].to_numpy(dtype=float) for c in ("mean", "lo", "hi"))
+        ax.bar(sub["model"], mean, 0.5, color=[COLOUR.get(m, "C0") for m in sub["model"]],
+               yerr=[mean - lo, hi - mean], capsize=4, error_kw={"lw": 1})
         ax.set_title(LABEL[metric], fontsize=10)
         ax.grid(axis="y", alpha=0.25)
     fig.tight_layout()
