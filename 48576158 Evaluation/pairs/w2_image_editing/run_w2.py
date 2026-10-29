@@ -38,7 +38,7 @@ def fit(img: Image.Image, long_side: int = 1024, mult: int = 16) -> Image.Image:
     return img.resize((w, h), Image.LANCZOS)
 
 
-def build(model: str, offload: bool):
+def build(model: str, offload: str | None):
     if model == "identity":
         return None
     import torch
@@ -52,8 +52,10 @@ def build(model: str, offload: bool):
         from diffusers import FluxKontextPipeline
 
         pipe = FluxKontextPipeline.from_pretrained(repo, torch_dtype=torch.bfloat16)
-    if offload:
-        pipe.enable_model_cpu_offload()
+    if offload == "sequential":
+        pipe.enable_sequential_cpu_offload()  # layer by layer: fits any GPU, slowest
+    elif offload == "model":
+        pipe.enable_model_cpu_offload()  # whole components: needs the largest one to fit on the GPU
     else:
         pipe.to("cuda")
     pipe.set_progress_bar_config(disable=True)
@@ -84,7 +86,8 @@ def main() -> None:
     ap.add_argument("--results", default=str(ROOT / "results" / "w2.jsonl"))
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--long-side", type=int, default=1024)
-    ap.add_argument("--offload", action="store_true", help="CPU offload to fit smaller GPUs (slower)")
+    ap.add_argument("--offload", nargs="?", const="model", choices=["model", "sequential"],
+                    help="CPU offload to fit smaller GPUs (slower). 'model' = whole components, 'sequential' = layer by layer")
     ap.add_argument("--limit", type=int, default=0, help="only the first N items (smoke test)")
     args = ap.parse_args()
 
