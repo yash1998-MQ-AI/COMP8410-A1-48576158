@@ -19,7 +19,7 @@ from google.colab import drive, userdata
 import os
 drive.mount('/content/drive')
 BASE = '/content/drive/MyDrive/comp8410_a1'
-for d in ['results', 'outputs', 'hf_cache', 'w2_listing']:
+for d in ['results', 'outputs', 'w2_listing']:
     os.makedirs(f'{BASE}/{d}', exist_ok=True)
 
 REPO = 'yash1998-MQ-AI/COMP8410-A1-48576158'
@@ -38,7 +38,7 @@ url = f'https://{tok}@github.com/{REPO}.git' if tok else f'https://github.com/{R
 
 ## Cell 2: link Drive folders, log in, check the GPU
 ```python
-os.environ['HF_HOME'] = f'{BASE}/hf_cache'          # weights are cached on Drive
+os.environ['HF_HOME'] = '/content/hf_cache'         # weights go on Colab's local disk, NOT Drive (they are 30-60 GB per model; a free Drive has 15 GB and corrupts the files)
 !rm -rf results outputs
 !ln -s {BASE}/results results
 !ln -s {BASE}/outputs outputs
@@ -51,15 +51,23 @@ login(userdata.get('HF_TOKEN'))
 !python -m pytest -q tests          # all tests should pass
 ```
 
-## Cell 3: smoke test, then the real run (Week 2)
+## Cell 3: smoke test only (1 item)
 ```python
 !python pairs/w2_image_editing/run_w2.py --model flux1-kontext-dev --limit 1 --offload
-# if that works:
+```
+
+## Cell 4: real run (only after Cell 3 works)
+```python
 !python pairs/w2_image_editing/run_w2.py --model flux1-kontext-dev --offload
 !python pairs/w2_image_editing/run_w2.py --model qwen-image-edit-2509 --offload
 !python pairs/w2_image_editing/score_w2.py
 !python -m a1eval summarize results/w2.jsonl --out report_assets/w2
 ```
+
+## Model weights
+Weights are downloaded to Colab's local disk each session (about a minute per model at the speeds seen). Do not cache them on Drive.
+If an earlier run wrote them to Drive, delete `comp8410_a1/hf_cache` there and empty the Drive trash, or the space stays used.
+Run only the first line of Cell 3 (smoke test, `--limit 1`) until it works.
 
 ## Rules for every session
 - Keep the browser tab open and the screen awake (Colab Pro does not run in the background); work in sessions of about an hour.
