@@ -1,2 +1,3 @@
 date,provider,gpu,hours,rate_per_hr,cost,currency,note
 2026-10-29,Colab Pro,A100-40GB + RTX PRO 6000 (G4),,,3.29,AUD,"Week 2 pilots and full runs: 21.72 units used (100 start - 78.28 left) x A$0.1513; sessions not split; start balance of 100 assumed"
+2026-10-30,Colab Pro,RTX PRO 6000 (G4),,1.35,1.54,AUD,"Week 3 smoke tests, full run (96 images), scoring and report: 10.18 units (78.28 -> 68.10) x A$0.1513. G4 usage rate read from Resources panel: about 8.9 units/hr (A$1.35/hr)."
