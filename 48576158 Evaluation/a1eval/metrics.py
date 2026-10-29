@@ -46,6 +46,28 @@ def masked_psnr(a: np.ndarray, b: np.ndarray, keep_mask: np.ndarray) -> float:
     return psnr(a[keep], b[keep])
 
 
+def _sobel_magnitude(gray: np.ndarray) -> np.ndarray:
+    p = np.pad(gray.astype(np.float32), 1, mode="edge")
+    gx = (p[:-2, 2:] + 2 * p[1:-1, 2:] + p[2:, 2:]) - (p[:-2, :-2] + 2 * p[1:-1, :-2] + p[2:, :-2])
+    gy = (p[2:, :-2] + 2 * p[2:, 1:-1] + p[2:, 2:]) - (p[:-2, :-2] + 2 * p[:-2, 1:-1] + p[:-2, 2:])
+    return np.hypot(gx, gy)
+
+
+def edge_ssim(a: np.ndarray, b: np.ndarray) -> float:
+    """Structure preservation: SSIM between Sobel edge maps of two images.
+
+    Unlike pixel metrics it tolerates global lighting/colour changes, so it suits
+    relighting and time-of-day edits where the layout should stay fixed. If the
+    sizes differ, b is resized to a.
+    """
+    from skimage.metrics import structural_similarity
+
+    if a.shape[:2] != b.shape[:2]:
+        b = np.asarray(Image.fromarray(b).resize((a.shape[1], a.shape[0]), Image.LANCZOS))
+    ma, mb = _sobel_magnitude(a.mean(axis=2)), _sobel_magnitude(b.mean(axis=2))
+    return float(structural_similarity(ma, mb, data_range=max(float(ma.max()), float(mb.max()), 1e-6)))
+
+
 # ---------------------------------------------------------------- video
 def frame_flicker(frames: Sequence[np.ndarray]) -> float:
     """Mean absolute difference between consecutive frames (0-255 scale).

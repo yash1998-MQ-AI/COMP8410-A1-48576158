@@ -49,3 +49,25 @@ Checklist of methodology bullets covered:
 - Environment: `pairs/w2_image_editing/ENV.txt` (pip freeze), model versions and download dates in `docs/EVIDENCE.md`
 - Screen clip of the run: `clips/w2_*.mp4`
 - GPU spend: `cost_log.csv`
+
+## How to run (Colab)
+Scope: lighting, time-of-day and weather instruction edits only (no staging, clutter removal, object insertion or fill).
+15 items, one prompt and one fixed seed each, input resized to 1024 px long side, same prompt for both models.
+
+1. Local, once: `python pairs/w2_image_editing/prepare_items.py` (builds `data/processed/w2_listing/` and `items.csv`).
+   Copy `data/processed/w2_listing/` to Drive and link it into the repo at the same path (private photos are not in git).
+2. Colab (see `colab/setup_cell.md` for the Drive/repo setup):
+```
+!pip -q install -U diffusers transformers accelerate sentencepiece protobuf
+from huggingface_hub import login; login()   # FLUX.1 Kontext [dev] is gated: accept its licence on Hugging Face first
+!python pairs/w2_image_editing/run_w2.py --model flux1-kontext-dev --limit 1 --offload       # smoke test, check GPU and speed
+!python pairs/w2_image_editing/run_w2.py --model flux1-kontext-dev --offload
+!python pairs/w2_image_editing/run_w2.py --model qwen-image-edit-2509 --offload
+!python pairs/w2_image_editing/score_w2.py
+!python -m a1eval summarize results/w2.jsonl --out report_assets/w2
+```
+3. Remove `--offload` on an 80 GB GPU for speed. Record the GPU, compute units used and library versions in `docs/EVIDENCE.md` and `cost_log.csv`.
+
+Metrics: `edge_ssim` (layout kept), `clip_i` (content kept), `clip_gain` (moved toward the target description), plus `latency_s` and `peak_vram_gb`.
+Status: generation code for the two models has NOT yet been run on a GPU; the pipeline, resume logic and edge metric are tested on CPU with the `identity` stub.
+The generated edits show private rooms: decide per item what is published (street-facing images show the house front).

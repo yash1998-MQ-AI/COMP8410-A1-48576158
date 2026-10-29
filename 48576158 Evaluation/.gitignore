@@ -13,9 +13,8 @@ checkpoints/
 *.splat
 # raw private photos stay out of the public repo (see data/README.md)
 data/raw/
+# cleaned copies of private captures are derived from the same private rooms
+data/processed/
 # survey answer key and raw responses must not be public
 survey/answer_key.json
 survey/responses.csv
-docs/EVIDENCE.md
-docs/DECLARATION.md
-docs/RUBRIC_CHECKLIST.md

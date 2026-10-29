@@ -38,4 +38,8 @@ for item in items:
     out.save(f'outputs/w2/qwen-image-edit-2509/{item.id}.png')
 ```
 
-After every session add a row to `cost_log.csv` (compute units used x unit price) and stop the runtime.
+After every session add a row to `cost_log.csv` and stop the runtime. Use
+`rate_per_hr = (compute units per hour shown in Colab) x (price per compute unit)`,
+e.g. 100 units cost A$15.13 so one unit is A$0.1513. Colab Pro does not run in the
+background: keep the tab open and the screen awake, and work in sessions of about an hour
+so a disconnect loses little (runs resume from `results/`).

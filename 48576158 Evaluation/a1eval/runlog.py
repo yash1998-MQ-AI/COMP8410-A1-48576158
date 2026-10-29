@@ -10,7 +10,7 @@ from typing import Any, Iterator
 
 from .schema import Record, append
 
-COST_HEADER = ["date", "provider", "gpu", "hours", "rate_usd_per_hr", "cost_usd", "note"]
+COST_HEADER = ["date", "provider", "gpu", "hours", "rate_per_hr", "cost", "currency", "note"]
 
 
 def _cuda():
@@ -62,9 +62,12 @@ def log_cost(
     provider: str,
     gpu: str,
     hours: float,
-    rate_usd_per_hr: float,
+    rate_per_hr: float,
     note: str = "",
+    currency: str = "AUD",
 ) -> None:
+    """Append one session to the ledger. rate_per_hr is in `currency` per GPU hour
+    (for Colab: compute units per hour x price per compute unit)."""
     path = Path(path)
     new = not path.exists()
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -72,7 +75,7 @@ def log_cost(
         w = csv.writer(fh)
         if new:
             w.writerow(COST_HEADER)
-        w.writerow([date, provider, gpu, hours, rate_usd_per_hr, round(hours * rate_usd_per_hr, 4), note])
+        w.writerow([date, provider, gpu, hours, rate_per_hr, round(hours * rate_per_hr, 4), currency, note])
 
 
 def total_cost(path: str | Path) -> float:
@@ -80,4 +83,4 @@ def total_cost(path: str | Path) -> float:
     if not path.exists():
         return 0.0
     with path.open(newline="", encoding="utf-8") as fh:
-        return sum(float(r["cost_usd"]) for r in csv.DictReader(fh))
+        return sum(float(r["cost"]) for r in csv.DictReader(fh))

@@ -24,7 +24,7 @@ def main() -> None:
         summary = write_pair_outputs(args.results, args.out)
         print(summary.to_string(index=False))
     elif args.cmd == "cost":
-        print(f"total spend: US${total_cost(args.ledger):.2f}")
+        print(f"total spend: A${total_cost(args.ledger):.2f} (cap A$60)")
 
 
 if __name__ == "__main__":
