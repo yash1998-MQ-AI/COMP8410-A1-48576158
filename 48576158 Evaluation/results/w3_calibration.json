@@ -1,0 +1,20 @@
+{
+  "within_person": {
+    "pairs": 0,
+    "mean": null,
+    "values": []
+  },
+  "between_person": {
+    "pairs": 6,
+    "mean": 0.0746281271179517,
+    "values": [
+      -0.2243,
+      0.2086,
+      0.1224,
+      0.0809,
+      0.132,
+      0.1282
+    ]
+  },
+  "note": "FaceNet cosine, InceptionResnetV1/VGGFace2, MTCNN crop. Identities without a detected face are omitted."
+}
