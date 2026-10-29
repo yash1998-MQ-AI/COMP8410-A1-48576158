@@ -1,0 +1,13 @@
+pair: w7
+title: "Week 7 - Video editing"
+models:
+  - name: "Wan2.1-VACE-14B"
+    version: ""        # exact repo id / commit / date downloaded
+    licence: ""
+  - name: "Lucy-Edit-1.1-Dev"
+    version: ""
+    licence: ""
+compute: "A100 80GB"
+seeds: [0, 1, 2]
+items: []              # 12-15 item ids, fixed before running
+metrics: ["clip_t (edit alignment)", "frame_flicker", "masked_psnr (unedited region)", "latency_s", "peak_vram_gb"]

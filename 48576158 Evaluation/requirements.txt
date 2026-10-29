@@ -1,0 +1,7 @@
+# Core harness (CPU only; enough to run tests and aggregate results)
+numpy>=1.26
+pillow>=10
+scikit-image>=0.22
+pandas>=2.1
+matplotlib>=3.8
+pytest>=8

@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+# large artefacts: keep in Drive / release assets, record hashes in docs/EVIDENCE.md
+weights/
+checkpoints/
+*.safetensors
+*.ckpt
+*.pth
+*.ply
+*.splat
+# raw private photos stay out of the public repo (see data/README.md)
+data/raw/
+# survey answer key and raw responses must not be public
+survey/answer_key.json
+survey/responses.csv
+docs/EVIDENCE.md
+docs/DECLARATION.md
+docs/RUBRIC_CHECKLIST.md

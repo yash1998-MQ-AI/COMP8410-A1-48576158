@@ -1,0 +1,13 @@
+pair: w5
+title: "Week 5 - Single image to 3D"
+models:
+  - name: "TRELLIS(.2)"
+    version: ""        # exact repo id / commit / date downloaded
+    licence: ""
+  - name: "Hunyuan3D 2.1"
+    version: ""
+    licence: ""
+compute: "A100 80GB"
+seeds: [0, 1, 2]
+items: []              # 12-15 item ids, fixed before running
+metrics: ["clip_i (render vs input)", "silhouette_iou or rater score", "latency_s", "peak_vram_gb"]

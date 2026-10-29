@@ -1,0 +1,13 @@
+pair: w4
+title: "Week 4 - NeRF vs 3D Gaussian Splatting"
+models:
+  - name: "3DGS (splatfacto)"
+    version: ""        # exact repo id / commit / date downloaded
+    licence: ""
+  - name: "Nerfacto"
+    version: ""
+    licence: ""
+compute: "4090/L4/L40S class GPU"
+seeds: [0, 1, 2]
+items: []              # 12-15 item ids, fixed before running
+metrics: ["psnr", "ssim", "lpips_distance (held-out views)", "train_time_s", "render_fps", "model_size_mb"]

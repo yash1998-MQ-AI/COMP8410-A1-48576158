@@ -1,0 +1,11 @@
+# Extra packages for model-based metrics and generation.
+# Install per pair; exact model-specific dependencies are listed in each
+# pairs/<week>/README.md. Pin versions you actually used in pairs/<week>/ENV.txt
+# (run `pip freeze > ENV.txt` at the end of each pair).
+torch
+transformers>=4.44
+diffusers>=0.30
+accelerate
+lpips            # LPIPS metric
+insightface      # ArcFace identity similarity (research use only); needs onnxruntime-gpu
+onnxruntime-gpu

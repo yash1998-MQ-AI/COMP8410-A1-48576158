@@ -1,0 +1,13 @@
+pair: w3
+title: "Week 3 - Identity preservation (training-free)"
+models:
+  - name: "PuLID"
+    version: ""        # exact repo id / commit / date downloaded
+    licence: ""
+  - name: "InstantID"
+    version: ""
+    licence: ""
+compute: "4090/L4/L40S class GPU"
+seeds: [0, 1, 2]
+items: []              # 12-15 item ids, fixed before running
+metrics: ["identity_similarity (ArcFace cosine)", "clip_t (prompt fidelity)", "latency_s", "peak_vram_gb"]

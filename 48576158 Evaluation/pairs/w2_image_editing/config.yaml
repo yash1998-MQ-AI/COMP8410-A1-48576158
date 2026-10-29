@@ -1,0 +1,13 @@
+pair: w2
+title: "Week 2 - Instruction-based image editing (relighting, time-of-day, style)"
+models:
+  - name: "Qwen-Image-Edit-2509"
+    version: ""        # exact repo id / commit / date downloaded
+    licence: ""
+  - name: "FLUX.1 Kontext [dev]"
+    version: ""
+    licence: ""
+compute: "A100 80GB (or quantised build)"
+seeds: [0, 1, 2]
+items: []              # 12-15 item ids, fixed before running
+metrics: ["clip_t (edit/prompt alignment)", "lpips_bg or masked_psnr (unchanged-region preservation)", "latency_s", "peak_vram_gb"]

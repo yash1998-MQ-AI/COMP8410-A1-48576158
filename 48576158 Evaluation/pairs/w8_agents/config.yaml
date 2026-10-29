@@ -1,0 +1,13 @@
+pair: w8
+title: "Week 8 - Agents, evaluation and governance"
+models:
+  - name: "UI-TARS-1.5-7B (candidate)"
+    version: ""        # exact repo id / commit / date downloaded
+    licence: ""
+  - name: "MAI-UI-8B or Holo (candidate)"
+    version: ""
+    licence: ""
+compute: "4090/L4/L40S class GPU"
+seeds: [0, 1, 2]
+items: []              # 12-15 item ids, fixed before running
+metrics: ["task_success (0/1, environment reward)", "steps_taken", "latency_s", "injection_pass (0/1)"]
