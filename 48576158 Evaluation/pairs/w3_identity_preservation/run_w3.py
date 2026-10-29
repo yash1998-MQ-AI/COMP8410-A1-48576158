@@ -100,9 +100,13 @@ class PuLID:
         self.torch = torch
 
     def __call__(self, ref: Image.Image, prompt: str, negative: str, seed: int) -> Image.Image:
-        uncond, cond = self.pipe.get_id_embedding([np.array(ref.convert("RGB"))])
-        out = self.pipe.inference(prompt, (1, 1024, 1024), negative, cond, uncond, id_scale=self.cfg["id_scale"],
-                                  guidance_scale=self.cfg["cfg"], steps=self.cfg["steps"], seed=seed)
+        # The repo's inference() has no no_grad guard, unlike the diffusers pipelines InstantID uses, so
+        # without this it retains the graph (inflating peak VRAM) and postprocess() fails on a tensor
+        # that requires grad. Added here so both models are measured under the same conditions.
+        with self.torch.no_grad():
+            uncond, cond = self.pipe.get_id_embedding([np.array(ref.convert("RGB"))])
+            out = self.pipe.inference(prompt, (1, 1024, 1024), negative, cond, uncond, id_scale=self.cfg["id_scale"],
+                                      guidance_scale=self.cfg["cfg"], steps=self.cfg["steps"], seed=seed)
         self.pipe.debug_img_list = []  # the repo appends debug crops on every call
         return out[0]
 
