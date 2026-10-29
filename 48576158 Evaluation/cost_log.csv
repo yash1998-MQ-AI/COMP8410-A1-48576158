@@ -1,1 +1,2 @@
 date,provider,gpu,hours,rate_per_hr,cost,currency,note
+2026-10-29,Colab Pro,A100-40GB + RTX PRO 6000 (G4),,,3.29,AUD,"Week 2 pilots and full runs: 21.72 units used (100 start - 78.28 left) x A$0.1513; sessions not split; start balance of 100 assumed"
