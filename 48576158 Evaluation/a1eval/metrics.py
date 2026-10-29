@@ -99,6 +99,16 @@ def _clip(name: str = "openai/clip-vit-base-patch32"):
     return _CLIP[name]
 
 
+def _image_embeds(model, pixel_values):
+    """Projected CLIP image embeddings; built from the sub-modules so it does not
+    depend on what a given transformers version returns from get_image_features."""
+    return model.visual_projection(model.vision_model(pixel_values=pixel_values).pooler_output)
+
+
+def _text_embeds(model, input_ids, attention_mask):
+    return model.text_projection(model.text_model(input_ids=input_ids, attention_mask=attention_mask).pooler_output)
+
+
 def clip_text_image(image: np.ndarray, text: str, name: str = "openai/clip-vit-base-patch32") -> float:
     """Cosine similarity between an image and a text prompt (CLIP-T)."""
     import torch
@@ -106,9 +116,10 @@ def clip_text_image(image: np.ndarray, text: str, name: str = "openai/clip-vit-b
     model, proc, dev = _clip(name)
     inputs = proc(text=[text], images=Image.fromarray(image), return_tensors="pt", padding=True).to(dev)
     with torch.no_grad():
-        out = model(**inputs)
-    img = out.image_embeds / out.image_embeds.norm(dim=-1, keepdim=True)
-    txt = out.text_embeds / out.text_embeds.norm(dim=-1, keepdim=True)
+        img = _image_embeds(model, inputs["pixel_values"])
+        txt = _text_embeds(model, inputs["input_ids"], inputs["attention_mask"])
+    img = img / img.norm(dim=-1, keepdim=True)
+    txt = txt / txt.norm(dim=-1, keepdim=True)
     return float((img * txt).sum())
 
 
@@ -119,7 +130,7 @@ def clip_image_image(a: np.ndarray, b: np.ndarray, name: str = "openai/clip-vit-
     model, proc, dev = _clip(name)
     inputs = proc(images=[Image.fromarray(a), Image.fromarray(b)], return_tensors="pt").to(dev)
     with torch.no_grad():
-        emb = model.get_image_features(**inputs)
+        emb = _image_embeds(model, inputs["pixel_values"])
     emb = emb / emb.norm(dim=-1, keepdim=True)
     return float((emb[0] * emb[1]).sum())
 
