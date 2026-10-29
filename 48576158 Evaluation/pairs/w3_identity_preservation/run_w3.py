@@ -121,6 +121,9 @@ class InstantID:
 
         from diffusers.models import ControlNetModel
         from insightface.app import FaceAnalysis
+        # Recent diffusers moved MultiControlNetModel; alias the old module path the repo imports.
+        import diffusers.models.controlnets.multicontrolnet as _mcn
+        sys.modules.setdefault("diffusers.pipelines.controlnet.multicontrolnet", _mcn)
         from pipeline_stable_diffusion_xl_instantid import StableDiffusionXLInstantIDPipeline, draw_kps
 
         self.draw_kps = draw_kps
