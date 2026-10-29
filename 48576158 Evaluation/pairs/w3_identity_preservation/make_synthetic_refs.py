@@ -44,6 +44,18 @@ def main() -> None:
             img.save(out / f"{ident}_cand{seed}.png")
             print("wrote", f"{ident}_cand{seed}.png")
 
+    # one small contact sheet to choose from: rows = identities, columns = seeds
+    from PIL import Image
+
+    cell = 256
+    sheet = Image.new("RGB", (cell * len(args.seeds), cell * len(IDENTITIES)), "white")
+    for r, ident in enumerate(IDENTITIES):
+        for c, seed in enumerate(args.seeds):
+            im = Image.open(out / f"{ident}_cand{seed}.png").convert("RGB").resize((cell, cell))
+            sheet.paste(im, (c * cell, r * cell))
+    sheet.save(out / "contact_sheet.jpg", quality=88)
+    print("wrote contact_sheet.jpg (rows:", ", ".join(IDENTITIES), "; columns: seeds", args.seeds, ")")
+
 
 if __name__ == "__main__":
     main()
