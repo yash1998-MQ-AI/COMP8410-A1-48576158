@@ -176,6 +176,46 @@ def identity_similarity(a: np.ndarray, b: np.ndarray) -> float:
     return float(np.dot(ea, eb))
 
 
+def facenet_embedding(img: np.ndarray) -> np.ndarray | None:
+    """L2-normalised 512-d FaceNet embedding (InceptionResnetV1, VGGFace2) of the largest face.
+
+    Returns None when MTCNN finds no face, so a failure to render a face is
+    visible in the results instead of being scored as a bad match.
+
+    FaceNet is used as the primary identity metric because its architecture and
+    training set are independent of the ArcFace recognisers that PuLID and
+    InstantID use internally; scoring with the same family of recogniser a
+    model conditions on would reward it for matching its own encoder.
+    """
+    import torch
+    from PIL import Image as _PILImage
+
+    global _FACENET
+    try:
+        _FACENET
+    except NameError:
+        from facenet_pytorch import MTCNN, InceptionResnetV1
+
+        dev = "cuda" if torch.cuda.is_available() else "cpu"
+        _FACENET = (
+            MTCNN(image_size=160, margin=0, select_largest=True, device=dev),
+            InceptionResnetV1(pretrained="vggface2").eval().to(dev),
+            dev,
+        )
+    mtcnn, net, dev = _FACENET
+    face = mtcnn(_PILImage.fromarray(img))
+    if face is None:
+        return None
+    with torch.no_grad():
+        e = net(face.unsqueeze(0).to(dev))[0]
+    return (e / e.norm()).cpu().numpy()
+
+
+def cosine(a: np.ndarray, b: np.ndarray) -> float:
+    """Cosine similarity of two embeddings."""
+    return float(np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b)))
+
+
 # ------------------------------------------------------------ statistics
 def bootstrap_ci(values: Sequence[float], n_boot: int = 2000, alpha: float = 0.05, seed: int = 0):
     """Percentile bootstrap CI of the mean. Returns (mean, lo, hi).
