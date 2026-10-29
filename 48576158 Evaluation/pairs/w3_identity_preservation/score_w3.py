@@ -6,6 +6,9 @@ Metrics (one row per generated image):
                       NaN when no face is found, so failures stay visible.
   face_found          1.0 if a face was detected in the generated image, else 0.0.
                       id_facenet alone cannot separate "wrong face" from "no face".
+  face_fraction       share of the frame taken by the face box. A recogniser scores a
+                      close-up higher than a wide shot of the same person, so this is
+                      the control for reading id_facenet against prompt adherence.
   id_arcface          secondary identity match: ArcFace (insightface buffalo_l).
                       Reported as a check, not as the headline: both models condition
                       on ArcFace embeddings internally, so this metric is closer to
@@ -38,7 +41,7 @@ from dataclasses import asdict  # noqa: E402
 from a1eval import Record, append, load  # noqa: E402
 from a1eval import metrics as M  # noqa: E402
 
-ALL = ["id_facenet", "face_found", "id_arcface", "clip_t", "id_facenet_heldout"]
+ALL = ["id_facenet", "face_found", "face_fraction", "id_arcface", "clip_t", "id_facenet_heldout"]
 
 
 def _resolve(p: str) -> Path:
@@ -135,7 +138,8 @@ def main() -> None:
 
                 gen = M.load_image(img_path)
                 r_img, r_emb = ref_of(_resolve(it["ref"]))
-                g_emb = M.facenet_embedding(gen) if {"id_facenet", "face_found", "id_facenet_heldout"} & set(todo) else None
+                need_emb = {"id_facenet", "face_found", "id_facenet_heldout"} & set(todo)
+                g_emb = M.facenet_embedding(gen) if need_emb else None
                 meta = {"identity": it["identity"], "scenario": it["scenario"], "item": it["item_id"]}
 
                 for m in todo:
@@ -143,6 +147,8 @@ def main() -> None:
                         v = 1.0 if g_emb is not None else 0.0
                     elif m == "id_facenet":
                         v = float("nan") if (g_emb is None or r_emb is None) else M.cosine(g_emb, r_emb)
+                    elif m == "face_fraction":
+                        v = M.face_box_fraction(gen)
                     elif m == "id_arcface":
                         v = M.identity_similarity(r_img, gen)
                     elif m == "clip_t":

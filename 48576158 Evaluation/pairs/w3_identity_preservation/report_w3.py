@@ -28,10 +28,12 @@ from a1eval import metrics as M  # noqa: E402
 
 COLOUR = {"pulid-v1.1": "#1b6ca8", "instantid": "#d1495b"}
 HIGHER_IS_BETTER = {"id_facenet": True, "id_facenet_heldout": True, "id_arcface": True,
-                    "clip_t": True, "face_found": True, "latency_s": False, "peak_vram_gb": False}
+                    "clip_t": True, "face_found": True, "latency_s": False, "peak_vram_gb": False,
+                    "face_fraction": None}   # neither direction is better: it is a control
 LABEL = {"id_facenet": "Identity (FaceNet cosine)", "id_facenet_heldout": "Identity vs held-out photos",
          "id_arcface": "Identity (ArcFace cosine)", "clip_t": "Prompt adherence (CLIP)",
-         "face_found": "Face found", "latency_s": "Latency (s)", "peak_vram_gb": "Peak VRAM (GB)"}
+         "face_found": "Face found", "latency_s": "Latency (s)", "peak_vram_gb": "Peak VRAM (GB)",
+         "face_fraction": "Face size (share of frame)"}
 
 
 def frame(results: Path) -> pd.DataFrame:
@@ -133,7 +135,35 @@ def figures(df: pd.DataFrame, out: Path, calib: dict | None, show: bool):
     if show:
         plt.show()
 
-    # 3. cost of running it
+    # 3. the confound: a recogniser scores a close-up higher than a wide shot
+    wide = df[df["metric"].isin(["id_facenet", "face_fraction", "clip_t"])].pivot_table(
+        index=["model", "item_id"], columns="metric", values="value").reset_index()
+    if "face_fraction" in wide and wide["face_fraction"].notna().any():
+        fig, axes = plt.subplots(1, 2, figsize=(10, 3.8))
+        for i, m in enumerate(models):
+            g = wide[wide["model"] == m].dropna(subset=["face_fraction", "id_facenet"])
+            if g.empty:
+                continue
+            r = g["face_fraction"].corr(g["id_facenet"])
+            axes[0].scatter(g["face_fraction"], g["id_facenet"], s=18, alpha=0.75,
+                            color=COLOUR.get(m, f"C{i}"), label=f"{m} (r = {r:.2f})")
+            axes[1].scatter(g["face_fraction"], g["clip_t"], s=18, alpha=0.75,
+                            color=COLOUR.get(m, f"C{i}"), label=m)
+        axes[0].set_xlabel(LABEL["face_fraction"], fontsize=9)
+        axes[0].set_ylabel(LABEL["id_facenet"], fontsize=9)
+        axes[0].set_title("Identity score rises with face size", fontsize=10)
+        axes[0].legend(fontsize=8)
+        axes[1].set_xlabel(LABEL["face_fraction"], fontsize=9)
+        axes[1].set_ylabel(LABEL["clip_t"], fontsize=9)
+        axes[1].set_title("A bigger face means less of the scene", fontsize=10)
+        for ax in axes:
+            ax.grid(alpha=0.25)
+        fig.tight_layout()
+        fig.savefig(out / "w3_facesize.png", dpi=160)
+        if show:
+            plt.show()
+
+    # 4. cost of running it
     fig, axes = plt.subplots(1, 2, figsize=(9, 3.4))
     for ax, metric in zip(axes, ["latency_s", "peak_vram_gb"]):
         sub = ci_table(df[df["metric"] == metric], ["model"])

@@ -176,6 +176,25 @@ def identity_similarity(a: np.ndarray, b: np.ndarray) -> float:
     return float(np.dot(ea, eb))
 
 
+def _facenet_models():
+    """MTCNN detector and the VGGFace2 FaceNet encoder, built once per process."""
+    import torch
+
+    global _FACENET
+    try:
+        return _FACENET
+    except NameError:
+        from facenet_pytorch import MTCNN, InceptionResnetV1
+
+        dev = "cuda" if torch.cuda.is_available() else "cpu"
+        _FACENET = (
+            MTCNN(image_size=160, margin=0, select_largest=True, device=dev),
+            InceptionResnetV1(pretrained="vggface2").eval().to(dev),
+            dev,
+        )
+        return _FACENET
+
+
 def facenet_embedding(img: np.ndarray) -> np.ndarray | None:
     """L2-normalised 512-d FaceNet embedding (InceptionResnetV1, VGGFace2) of the largest face.
 
@@ -190,25 +209,32 @@ def facenet_embedding(img: np.ndarray) -> np.ndarray | None:
     import torch
     from PIL import Image as _PILImage
 
-    global _FACENET
-    try:
-        _FACENET
-    except NameError:
-        from facenet_pytorch import MTCNN, InceptionResnetV1
-
-        dev = "cuda" if torch.cuda.is_available() else "cpu"
-        _FACENET = (
-            MTCNN(image_size=160, margin=0, select_largest=True, device=dev),
-            InceptionResnetV1(pretrained="vggface2").eval().to(dev),
-            dev,
-        )
-    mtcnn, net, dev = _FACENET
+    mtcnn, net, dev = _facenet_models()
     face = mtcnn(_PILImage.fromarray(img))
     if face is None:
         return None
     with torch.no_grad():
         e = net(face.unsqueeze(0).to(dev))[0]
     return (e / e.norm()).cpu().numpy()
+
+
+def face_box_fraction(img: np.ndarray) -> float:
+    """Share of the frame taken up by the detected face box (MTCNN). NaN if no face.
+
+    Recorded because face size is a confound for any recogniser-based identity
+    score: a model that ignores a wide-shot prompt and returns a close-up gets
+    more pixels per face, and so a higher similarity, without preserving the
+    identity any better.
+    """
+    from PIL import Image as _PILImage
+
+    mtcnn, _, _ = _facenet_models()
+    boxes, probs = mtcnn.detect(_PILImage.fromarray(img))
+    if boxes is None or len(boxes) == 0:
+        return float("nan")
+    x0, y0, x1, y1 = boxes[int(np.argmax(probs))]
+    h, w = img.shape[:2]
+    return float(abs((x1 - x0) * (y1 - y0)) / (h * w))
 
 
 def cosine(a: np.ndarray, b: np.ndarray) -> float:
