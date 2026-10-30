@@ -2,12 +2,22 @@ pair: w4
 title: "Week 4 - NeRF vs 3D Gaussian Splatting"
 models:
   - name: "3DGS (splatfacto)"
-    version: ""        # exact repo id / commit / date downloaded
-    licence: ""
+    version: "nerfstudio 1.1.5, gsplat 1.4.0"   # confirm in results/w4_summary.json after the run
+    licence: "nerfstudio Apache-2.0; gsplat Apache-2.0 (original 3DGS research code is non-commercial)"
   - name: "Nerfacto"
-    version: ""
-    licence: ""
-compute: "4090/L4/L40S class GPU"
+    version: "nerfstudio 1.1.5, nerfacc 0.5.2"
+    licence: "nerfstudio Apache-2.0; nerfacc MIT"
+compute: "L4 / A100 on Colab Pro (24 GB is enough)"
 seeds: [0, 1, 2]
-items: []              # 12-15 item ids, fixed before running
-metrics: ["psnr", "ssim", "lpips_distance (held-out views)", "train_time_s", "render_fps", "model_size_mb"]
+scene: "own bedroom capture, 105 phone frames (data/raw/Set A, private, not committed)"
+poses: "COLMAP once (exhaustive matching, CPU), shared by both models"
+split: "every 8th frame held out (eval_interval 8); never trained on"
+resolution: "720x540 (downscale factor 2 of 1440x1080) for training and evaluation"
+iterations: 30000      # each model's own default budget; smoke test uses 200
+gate: "at least 90% of the input frames must be placed by COLMAP"
+items: "held-out photos (about 13); the unit of analysis is the photo, averaged over seeds"
+metrics: ["psnr", "ssim", "lpips (held-out views)", "train_time_s", "render_fps", "model_size_mb", "peak_vram_gb", "n_gaussians (3DGS only)"]
+limits:
+  - "Held-out frames sit between training frames of the same walk-through, so this measures interpolation, not far-away novel views."
+  - "Training time is wall-clock for the whole ns-train process (includes start-up and image caching)."
+  - "Render FPS is measured at 720x540; Nerfacto ray marching depends on its chunk size (32768 rays)."

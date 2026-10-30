@@ -1,6 +1,6 @@
 # Week 4 - NeRF vs 3D Gaussian Splatting
 
-Status: NOT STARTED  |  Models: 3DGS (splatfacto) vs Nerfacto  |  Compute: 4090/L4/L40S class GPU
+Status: CODE WRITTEN, NOT YET RUN  |  Models: 3DGS (splatfacto) vs Nerfacto  |  Compute: L4 / A100 (Colab Pro)
 
 Scenario for this pair: Room capture (about 100 photos) for virtual tours. Held-out views for evaluation.
 

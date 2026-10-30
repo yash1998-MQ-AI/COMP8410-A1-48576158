@@ -10,7 +10,7 @@ every pair so results are directly comparable.
 |---|---|---|
 | w2 image editing | Qwen-Image-Edit-2509 vs FLUX.1 Kontext [dev] | not started |
 | w3 identity | PuLID vs InstantID | not started |
-| w4 NeRF / 3DGS | 3DGS (splatfacto) vs Nerfacto | not started |
+| w4 NeRF / 3DGS | 3DGS (splatfacto) vs Nerfacto | code written, not yet run |
 | w5 image to 3D | TRELLIS(.2) vs Hunyuan3D 2.1 | not started |
 | w6 video generation | Wan 2.2 vs HunyuanVideo 1.5 | not started |
 | w7 video editing | Wan2.1-VACE-14B vs Lucy-Edit-1.1-Dev | not started |
