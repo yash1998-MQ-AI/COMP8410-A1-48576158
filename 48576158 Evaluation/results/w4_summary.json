@@ -1,8 +1,8 @@
 {
   "scene": {
-    "n_input": 30,
-    "n_registered": 29,
-    "fraction_registered": 0.9667,
+    "n_input": 100,
+    "n_registered": 99,
+    "fraction_registered": 0.99,
     "matching": "exhaustive",
     "max_side": 1440,
     "pose_tool": "pycolmap 4.2.1",
@@ -13,20 +13,44 @@
       "1000025391.jpeg",
       "1000025393.jpeg"
     ],
-    "process_seconds": 40.1,
+    "process_seconds": 100.4,
     "min_required": 0.9,
     "gate_passed": true
   },
-  "gpu": "unknown",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB",
   "versions": {
-    "python": "3.10.12",
+    "python": "3.12.13",
     "nerfstudio_pinned": "1.1.5",
-    "torch": null,
-    "gsplat": null,
-    "nerfacc": null,
-    "nerfstudio": null,
-    "numpy": "2.2.6",
-    "lpips": null,
-    "colmap": null
+    "torch": "2.11.0+cu128",
+    "gsplat": "1.4.0",
+    "nerfacc": "0.5.2",
+    "nerfstudio": "1.1.5",
+    "numpy": "1.26.4",
+    "lpips": "0.1.4",
+    "colmap": "3.7-2"
+  },
+  "train": {
+    "iters": 30000,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "models": [
+      "nerfacto",
+      "splatfacto"
+    ],
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB",
+    "versions": {
+      "python": "3.12.13",
+      "nerfstudio_pinned": "1.1.5",
+      "torch": "2.11.0+cu128",
+      "gsplat": "1.4.0",
+      "nerfacc": "0.5.2",
+      "nerfstudio": "1.1.5",
+      "numpy": "1.26.4",
+      "lpips": "0.1.4",
+      "colmap": "3.7-2"
+    }
   }
 }
