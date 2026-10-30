@@ -105,6 +105,8 @@ def cmd_process(args: argparse.Namespace) -> int:
     for p in (stage, SCENE_DIR):
         if " " in str(p):
             raise SystemExit(f"working folder {p} contains a space; ns-process-data cannot handle that (set W4_WORK)")
+    if SCENE_DIR.exists():  # a stale database.db / images from an earlier run gives COLMAP two cameras and no frames
+        shutil.rmtree(SCENE_DIR)
     img_dir, img_dir2 = SCENE_DIR / "images", SCENE_DIR / f"images_{DOWNSCALE}"
     for d in (img_dir, img_dir2):
         d.mkdir(parents=True, exist_ok=True)
