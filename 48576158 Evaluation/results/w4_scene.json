@@ -1,0 +1,18 @@
+{
+  "n_input": 30,
+  "n_registered": 29,
+  "fraction_registered": 0.9667,
+  "matching": "exhaustive",
+  "max_side": 1440,
+  "pose_tool": "pycolmap 4.2.1",
+  "dropped_other_size": [
+    "1000025388.jpeg",
+    "1000025389.jpeg",
+    "1000025390.jpeg",
+    "1000025391.jpeg",
+    "1000025393.jpeg"
+  ],
+  "process_seconds": 40.1,
+  "min_required": 0.9,
+  "gate_passed": true
+}

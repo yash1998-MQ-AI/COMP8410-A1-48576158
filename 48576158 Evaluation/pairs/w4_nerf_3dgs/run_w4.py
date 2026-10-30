@@ -83,8 +83,21 @@ def cmd_process(args: argparse.Namespace) -> int:
     files = sorted(p for p in src.iterdir() if p.suffix.lower() in IMG_EXT)
     if not files:
         raise SystemExit(f"no images found in {src}")
-    if args.limit:
-        files = files[: args.limit]
+    # One shared camera model: keep only photos with the dominant resolution (Set A holds 5 stray 1440x1080 files
+    # among 100 at 4080x3072; mixed sizes under one set of intrinsics made COLMAP fail in the smoke test).
+    from collections import Counter
+    from PIL import Image, ImageOps
+    sizes = {}
+    for p in files:
+        with Image.open(p) as im:
+            sizes[p] = ImageOps.exif_transpose(im).size
+    main_size, _ = Counter(sizes.values()).most_common(1)[0]
+    dropped = [p.name for p in files if sizes[p] != main_size]
+    files = [p for p in files if sizes[p] == main_size]
+    print(f"kept {len(files)} photos at {main_size[0]}x{main_size[1]}; dropped {len(dropped)} with another size: {dropped}", flush=True)
+    if args.limit and len(files) > args.limit:  # spread evenly so the subset still has overlap and baseline
+        step = len(files) / args.limit
+        files = [files[int(i * step)] for i in range(args.limit)]
     stage = INPUT_DIR
     if stage.exists():
         shutil.rmtree(stage)
@@ -92,28 +105,53 @@ def cmd_process(args: argparse.Namespace) -> int:
     for p in (stage, SCENE_DIR):
         if " " in str(p):
             raise SystemExit(f"working folder {p} contains a space; ns-process-data cannot handle that (set W4_WORK)")
-    for p in files:
-        shutil.copy2(p, stage / p.name)
-    if SCENE_DIR.exists():
-        shutil.rmtree(SCENE_DIR)
+    img_dir, img_dir2 = SCENE_DIR / "images", SCENE_DIR / f"images_{DOWNSCALE}"
+    for d in (img_dir, img_dir2):
+        d.mkdir(parents=True, exist_ok=True)
+    for p in files:  # resize to --max-side (CPU pose estimation; also fixes the training resolution)
+        with Image.open(p) as im:
+            im = ImageOps.exif_transpose(im).convert("RGB")
+            im.thumbnail((args.max_side, args.max_side), Image.LANCZOS)
+            im.save(img_dir / (p.stem + ".jpg"), quality=95)
+            w, h = im.size
+            im.resize((w // DOWNSCALE, h // DOWNSCALE), Image.LANCZOS).save(img_dir2 / (p.stem + ".jpg"), quality=95)
 
-    env = dict(os.environ, QT_QPA_PLATFORM="offscreen")
-    cmd = ["ns-process-data", "images", "--data", str(stage), "--output-dir", str(SCENE_DIR),
-           "--no-gpu", "--matching-method", args.matching, "--camera-type", "perspective",
-           "--num-downscales", "1"]
-    print(" ".join(cmd), flush=True)
+    # Poses: pycolmap (current COLMAP) instead of the apt COLMAP 3.7 that ns-process-data calls. On the same photos
+    # apt COLMAP 3.7 found no initial image pair, while pycolmap registered every frame.
+    try:
+        import pycolmap
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "-q", "install", "pycolmap"])
+        import pycolmap
     t0 = time.perf_counter()
-    rc = subprocess.call(cmd, env=env)
+    colmap_dir = SCENE_DIR / "colmap"
+    sparse = colmap_dir / "sparse"
+    sparse.mkdir(parents=True, exist_ok=True)
+    db = colmap_dir / "database.db"
+    pycolmap.extract_features(db, img_dir, camera_mode=pycolmap.CameraMode.SINGLE, device=pycolmap.Device.cpu)
+    if args.matching == "sequential":
+        pycolmap.match_sequential(db, device=pycolmap.Device.cpu)
+    else:
+        pycolmap.match_exhaustive(db, device=pycolmap.Device.cpu)
+    models = pycolmap.incremental_mapping(db, img_dir, sparse)
+    if not models:
+        print("pycolmap built no sparse model", flush=True)
+        return 1
+    best = max(models, key=lambda k: models[k].num_reg_images())
+    print(f"pycolmap {pycolmap.__version__}: {len(models)} model(s), best has {models[best].num_reg_images()} "
+          f"registered images", flush=True)
+    from nerfstudio.process_data.colmap_utils import colmap_to_json
+    colmap_to_json(recon_dir=sparse / str(best), output_dir=SCENE_DIR)
     elapsed = time.perf_counter() - t0
     tj = SCENE_DIR / "transforms.json"
-    if rc != 0 or not tj.exists():
-        print("COLMAP / ns-process-data failed (see output above)", flush=True)
+    if not tj.exists():
+        print("transforms.json was not written", flush=True)
         return 1
 
     n_reg = len(json.loads(tj.read_text(encoding="utf-8"))["frames"])
     frac = n_reg / len(files)
     scene = {"n_input": len(files), "n_registered": n_reg, "fraction_registered": round(frac, 4),
-             "matching": args.matching, "process_seconds": round(elapsed, 1), "min_required": MIN_REGISTERED,
+             "matching": args.matching, "max_side": args.max_side, "pose_tool": "pycolmap " + pycolmap.__version__, "dropped_other_size": dropped, "process_seconds": round(elapsed, 1), "min_required": MIN_REGISTERED,
              "gate_passed": frac >= MIN_REGISTERED}
     SCENE_JSON.parent.mkdir(parents=True, exist_ok=True)
     SCENE_JSON.write_text(json.dumps(scene, indent=2), encoding="utf-8")
@@ -203,6 +241,7 @@ def main() -> int:
     p = sub.add_parser("process")
     p.add_argument("--images", required=True, help="folder with the source photos")
     p.add_argument("--limit", type=int, default=0, help="use only the first N photos (smoke test)")
+    p.add_argument("--max-side", type=int, default=1440, help="resize photos so the longer side is this many px")
     p.add_argument("--matching", default="exhaustive", choices=["exhaustive", "sequential", "vocab_tree"])
     t = sub.add_parser("train")
     t.add_argument("--models", nargs="+", default=list(MODELS), choices=list(MODELS))
