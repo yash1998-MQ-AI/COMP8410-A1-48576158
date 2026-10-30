@@ -73,3 +73,9 @@ def test_report_end_to_end_writes_tables_and_figures(tmp_path):
     matplotlib.use("Agg")
     rep.figures(v, rep.model_summary(v), rep.run_table(df), out, show=False)
     assert (out / "w4_quality.png").exists() and (out / "w4_per_view_psnr.png").exists()
+
+
+def test_working_folders_have_no_spaces():
+    # ns-process-data splits unquoted paths at spaces, and the repository folder name contains one
+    assert " " not in str(common.SCENE_DIR)
+    assert " " not in str(common.INPUT_DIR)

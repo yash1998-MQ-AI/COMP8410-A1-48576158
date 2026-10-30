@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import os
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -16,7 +18,23 @@ DEFAULT_ITERS = 30000  # each model's own default budget
 SEEDS = (0, 1, 2)
 MIN_REGISTERED = 0.90  # gate: share of input frames COLMAP must place
 
-SCENE_DIR = ROOT / "data" / "processed" / "w4_scene"
+def _work_dir() -> Path:
+    """Folder for COLMAP input and the processed scene. It must not contain spaces.
+
+    ns-process-data builds its COLMAP commands as unquoted shell strings, so a path such as
+    ".../48576158 Evaluation/..." is split in two and COLMAP fails with "image path does not exist".
+    The repository folder name has a space (it is required by the submission rules), so the working
+    data lives outside it. Override with the W4_WORK environment variable.
+    """
+    env = os.environ.get("W4_WORK")
+    if env:
+        return Path(env)
+    return Path("/content/w4_work") if Path("/content").exists() else Path(tempfile.gettempdir()) / "w4_work"
+
+
+WORK_DIR = _work_dir()
+SCENE_DIR = WORK_DIR / "scene"
+INPUT_DIR = WORK_DIR / "input"
 NS_OUT = ROOT / "outputs" / "w4" / "_ns_runs"          # nerfstudio run folders (checkpoints, configs)
 RESULTS = ROOT / "results" / "w4.jsonl"
 SUMMARY = ROOT / "results" / "w4_summary.json"

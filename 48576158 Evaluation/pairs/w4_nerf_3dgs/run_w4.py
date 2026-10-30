@@ -28,7 +28,7 @@ sys.path.insert(0, str(HERE.parents[1]))
 
 from a1eval import Record, append, load  # noqa: E402
 from w4_common import (  # noqa: E402
-    DEFAULT_ITERS, DOWNSCALE, EVAL_INTERVAL, MIN_REGISTERED, MODELS, NERFSTUDIO_VERSION, NS_OUT, PAIR,
+    DEFAULT_ITERS, DOWNSCALE, EVAL_INTERVAL, INPUT_DIR, MIN_REGISTERED, MODELS, NERFSTUDIO_VERSION, NS_OUT, PAIR,
     RESULTS, SCENE_DIR, SCENE_JSON, SEEDS, SUMMARY, run_dir,
 )
 
@@ -85,10 +85,13 @@ def cmd_process(args: argparse.Namespace) -> int:
         raise SystemExit(f"no images found in {src}")
     if args.limit:
         files = files[: args.limit]
-    stage = SCENE_DIR.parent / "w4_input"
+    stage = INPUT_DIR
     if stage.exists():
         shutil.rmtree(stage)
     stage.mkdir(parents=True)
+    for p in (stage, SCENE_DIR):
+        if " " in str(p):
+            raise SystemExit(f"working folder {p} contains a space; ns-process-data cannot handle that (set W4_WORK)")
     for p in files:
         shutil.copy2(p, stage / p.name)
     if SCENE_DIR.exists():
