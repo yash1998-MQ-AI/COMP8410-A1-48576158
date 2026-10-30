@@ -46,9 +46,26 @@ def load_pipeline(folder: Path):
     torch.load = functools.partial(torch.load, weights_only=False)
     from nerfstudio.utils.eval_utils import eval_setup
 
-    _, pipeline, _, step = eval_setup(folder / "config.yml", eval_num_rays_per_chunk=CHUNK, test_mode="inference")
+    # Nerfacto's ParallelDataManager starts background ray-loading processes in setup_train and has no eval
+    # loader in "inference" mode. We only need the held-out images and cameras, which we read from the dataset
+    # directly (below), so switch those loaders off. "test" mode (not "inference") keeps the downscaled images.
+    from nerfstudio.data.datamanagers.parallel_datamanager import ParallelDataManager
+
+    ParallelDataManager.setup_train = lambda self: None
+    ParallelDataManager.setup_eval = lambda self: None
+    _, pipeline, _, step = eval_setup(folder / "config.yml", eval_num_rays_per_chunk=CHUNK, test_mode="test")
     pipeline.eval()
     return pipeline, step
+
+
+def eval_views(pipeline):
+    """Yield (index, camera, ground-truth image) for every held-out view, for any nerfstudio data manager."""
+    dataset = pipeline.datamanager.eval_dataset
+    device = pipeline.device
+    for idx in range(len(dataset)):
+        camera = dataset.cameras[idx: idx + 1].to(device)
+        camera.metadata = {"cam_idx": idx}
+        yield idx, camera, dataset[idx]["image"]
 
 
 def score_run(model: str, seed: int, args: argparse.Namespace, have: set) -> int:
@@ -67,7 +84,7 @@ def score_run(model: str, seed: int, args: argparse.Namespace, have: set) -> int
     names = [Path(p).stem for p in pipeline.datamanager.eval_dataset.image_filenames]
     n = 0
     times: list[float] = []
-    for idx, (camera, batch) in enumerate(pipeline.datamanager.fixed_indices_eval_dataloader):
+    for idx, camera, gt_image in eval_views(pipeline):
         name = names[idx]
         item = f"{name}__s{seed}"
         with torch.no_grad():
@@ -77,7 +94,7 @@ def score_run(model: str, seed: int, args: argparse.Namespace, have: set) -> int
             torch.cuda.synchronize()
             times.append(time.perf_counter() - t0)
         pred = to_uint8(outputs["rgb"])
-        gt = to_uint8(batch["image"])
+        gt = to_uint8(gt_image)
         Image.fromarray(pred).save(out_dir / f"{name}.png")
         Image.fromarray(gt).save(gt_dir / f"{name}.png")
         meta = {"view": name, "iters_step": int(step)}
