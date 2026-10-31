@@ -33,6 +33,13 @@ from w5_common import (  # noqa: E402
 )
 
 
+def stage(msg: str) -> None:
+    """Progress line with this process's peak memory, so a runaway shows up as the stage that precedes the jump."""
+    import resource
+
+    print(f"[score] {msg} | peak RSS {resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1e6:.1f} GB", flush=True)
+
+
 class Embedder:
     def __init__(self):
         import torch
@@ -113,13 +120,16 @@ def main() -> int:
 
     all_items = item_ids()
     items = args.items or all_items
+    stage('start')
     emb = Embedder()
+    stage('models loaded')
     photo = {}
     for it in all_items:
         p = args.inputs / f"{it}.png"
         if p.exists():
             img, mask = RS.load_photo(p, CROP_SIZE)
             ce, de = emb([img])
+            stage(f'photo {it} embedded')
             photo[it] = {"img": img, "mask": mask, "clip": ce[0], "dino": de[0]}
     if not photo:
         print("no input photos found; run run_w5.py prep")
@@ -134,13 +144,16 @@ def main() -> int:
                 f = mesh_path(model, it, seed, args.out_root)
                 if not f.exists() or it not in photo or ((model, it, seed) in scored and not args.rescore):
                     continue
+                stage(f'{model} {it} s{seed}: rendering')
                 try:
                     views, masks, stats = render_views(f, UP_AXIS[model])
                 except Exception as exc:
                     print(f"{model} {it} s{seed}: could not render ({exc!r})")
                     append(args.results, Record(PAIR, model, it, "render_ok", 0.0, seed, {"error": repr(exc)[:200]}))
                     continue
+                stage('rendered 8 views')
                 ce, de = emb(views)
+                stage('views embedded')
                 ph = photo[it]
                 other = photo[present[(present.index(it) + 1) % len(present)]]
                 clip_s, dino_s = ce @ ph["clip"], de @ ph["dino"]
