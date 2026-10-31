@@ -18,6 +18,9 @@ from pathlib import Path
 os.environ.setdefault("OPENCV_IO_ENABLE_OPENEXR", "1")
 os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 
+sys.path.insert(0, str(Path.cwd()))   # the TRELLIS.2 repo root (run from there): trellis2 is a folder, not an installed package
+# python puts the script's own folder on sys.path, not the current directory, so add the TRELLIS.2 checkout explicitly
+sys.path.insert(0, os.environ.get("TRELLIS2_ROOT", "/content/TRELLIS.2"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gen_common import run  # noqa: E402
 from w5_common import HF_ID  # noqa: E402
