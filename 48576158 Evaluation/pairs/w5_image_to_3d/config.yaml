@@ -1,13 +1,24 @@
 pair: w5
 title: "Week 5 - Single image to 3D"
+scenario: "National online property marketplace: 3D assets of furniture and decor from one seller photo"
 models:
-  - name: "TRELLIS(.2)"
-    version: ""        # exact repo id / commit / date downloaded
-    licence: ""
+  - name: "TRELLIS.2-4B"
+    version: "microsoft/TRELLIS.2-4B (HF), code github.com/microsoft/TRELLIS.2 main; record commit hash from the run log"
+    licence: "Model and code MIT. Pipeline also loads gated third-party models (check RMBG-2.0 / DINOv3 terms) and nvdiffrast/nvdiffrec (NVIDIA licences): read before any commercial claim"
   - name: "Hunyuan3D 2.1"
-    version: ""
-    licence: ""
-compute: "A100 80GB"
+    version: "tencent/Hunyuan3D-2.1 (HF), code github.com/Tencent-Hunyuan/Hunyuan3D-2.1; record commit hash from the run log"
+    licence: "Tencent Hunyuan Community licence (non-MIT, territory and use limits): read LICENSE in the repo"
+compute: "Colab Pro A100 40/80GB (install on T4, generation on A100)"
 seeds: [0, 1, 2]
-items: []              # 12-15 item ids, fixed before running
-metrics: ["clip_i (render vs input)", "silhouette_iou or rater score", "latency_s", "peak_vram_gb"]
+warmup_seed: 99          # one unrecorded call per model
+items: [c01_topiary, c02_lamp, c03_book, c04_tumbler, c05_chair, c06_handchair, c07_daybed, c08_pouf,
+        c09_armchair, c10_coffeetable, c11_sofa, c12_bin, c13_heater]   # fixed before running; see set_c_manifest.csv
+input: "same background-removed RGBA PNG for both models (rembg birefnet-general; manual mask override in data/masks)"
+metrics:
+  - dino_best / dino_mean      # DINOv2-base CLS cosine, render vs photo, best / mean of 8 views
+  - clip_i_best / clip_i_mean  # CLIP ViT-B/32 image-image cosine
+  - sil_iou_best               # silhouette IoU vs photo cut-out, best of 8 views
+  - latency_s, peak_vram_gb, load_time_s
+  - n_faces, watertight, n_components, textured, glb_size_mb, gen_ok
+controls: "mismatch score against a different item's photo; fixed 8-view splat renderer shared by both models"
+not_measured: "geometric accuracy vs ground truth (no scans), true PBR appearance under lighting"
