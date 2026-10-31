@@ -18,7 +18,7 @@ from PIL import Image
 def load_mesh(path):
     import trimesh
 
-    loaded = trimesh.load(str(path), force="mesh")
+    loaded = trimesh.load(str(path), force="mesh", process=False)   # no automatic merge/repair: slow and memory-hungry on 1M-face meshes
     if isinstance(loaded, trimesh.Scene):
         loaded = loaded.dump(concatenate=True)
     return loaded
@@ -173,14 +173,32 @@ def iou(a: np.ndarray, b: np.ndarray) -> float:
 
 
 def mesh_stats(mesh) -> dict:
-    """Geometry facts reported next to the quality scores."""
-    try:
-        comps = len(mesh.split(only_watertight=False))
-    except Exception:
-        comps = -1
-    return {
-        "n_faces": int(len(mesh.faces)),
-        "n_vertices": int(len(mesh.vertices)),
-        "watertight": float(bool(mesh.is_watertight)),
-        "n_components": int(comps),
-    }
+    """Geometry facts, computed with plain sparse arrays (linear memory).
+
+    Vertices are first merged by position, so UV-seam splits do not count as holes or extra pieces.
+    watertight = every edge is shared by exactly two faces; n_components = connected pieces of the surface.
+    """
+    from scipy.sparse import coo_matrix
+    from scipy.sparse.csgraph import connected_components
+
+    verts = np.asarray(mesh.vertices, dtype=np.float64)
+    faces = np.asarray(mesh.faces, dtype=np.int64)
+    n_faces, n_vertices = int(len(faces)), int(len(verts))
+    if n_faces == 0:
+        return {"n_faces": 0, "n_vertices": n_vertices, "watertight": 0.0, "n_components": 0}
+    span = float(np.ptp(verts, axis=0).max()) or 1.0
+    keys = np.round(verts / (span * 1e-6)).astype(np.int64)
+    _, inverse = np.unique(keys, axis=0, return_inverse=True)
+    f = inverse.reshape(-1)[faces]
+    f = f[(f[:, 0] != f[:, 1]) & (f[:, 1] != f[:, 2]) & (f[:, 0] != f[:, 2])]   # drop collapsed faces
+    if len(f) == 0:
+        return {"n_faces": n_faces, "n_vertices": n_vertices, "watertight": 0.0, "n_components": 0}
+    e = np.sort(f[:, [0, 1, 1, 2, 2, 0]].reshape(-1, 2), axis=1)
+    nv = int(f.max()) + 1
+    _, counts = np.unique(e[:, 0] * nv + e[:, 1], return_counts=True)
+    used = np.unique(f)
+    graph = coo_matrix((np.ones(len(e), dtype=np.int8), (e[:, 0], e[:, 1])), shape=(nv, nv))
+    n_comp_all = connected_components(graph, directed=False)[0]
+    n_comp = int(n_comp_all - (nv - len(used)))   # vertices no face uses are not pieces
+    return {"n_faces": n_faces, "n_vertices": n_vertices, "watertight": float(bool(np.all(counts == 2))),
+            "n_components": n_comp}

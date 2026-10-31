@@ -87,7 +87,19 @@ def view_sheet(photo: np.ndarray, views: list[np.ndarray]) -> Image.Image:
     return sheet
 
 
+def limit_memory(gb: float = 40.0) -> None:
+    """A runaway allocation should raise MemoryError (with a traceback) rather than get the whole kernel OOM-killed."""
+    try:
+        import resource
+
+        # CUDA reserves a lot of address space, so cap the data segment, not the address space
+        resource.setrlimit(resource.RLIMIT_DATA, (int(gb * 1024**3), resource.RLIM_INFINITY))
+    except Exception as exc:
+        print("memory guard not set:", exc)
+
+
 def main() -> int:
+    limit_memory(40.0)
     ap = argparse.ArgumentParser()
     ap.add_argument("--models", nargs="+", default=list(MODELS), choices=list(MODELS))
     ap.add_argument("--items", nargs="*", default=None)

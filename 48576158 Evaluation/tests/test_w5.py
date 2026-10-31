@@ -147,3 +147,17 @@ def test_report_tables_on_synthetic_results(tmp_path):
     row = q[q.metric == "dino_best"].iloc[0]
     assert row.diff_A_minus_B > 0.05 and row.verdict == "A better" and row.A_wins == 12
     assert not R.control_table(df).empty and not R.run_table(df).empty
+
+
+def test_mesh_stats_ignore_uv_seams_and_count_pieces():
+    box = trimesh.creation.box((1, 1, 1))
+    st = RS.mesh_stats(box)
+    assert st["watertight"] == 1.0 and st["n_components"] == 1 and st["n_faces"] == 12
+    # split every vertex per face (what UV seams do): still the same closed surface
+    split = trimesh.Trimesh(vertices=box.vertices[box.faces].reshape(-1, 3), faces=np.arange(36).reshape(-1, 3), process=False)
+    st2 = RS.mesh_stats(split)
+    assert st2["watertight"] == 1.0 and st2["n_components"] == 1 and st2["n_vertices"] == 36
+    two = trimesh.util.concatenate([box, box.copy().apply_translation((3, 0, 0))])
+    assert RS.mesh_stats(two)["n_components"] == 2
+    open_mesh = trimesh.Trimesh(vertices=box.vertices, faces=box.faces[:-1], process=False)
+    assert RS.mesh_stats(open_mesh)["watertight"] == 0.0
