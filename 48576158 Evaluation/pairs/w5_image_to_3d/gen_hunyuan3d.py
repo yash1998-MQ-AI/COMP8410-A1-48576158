@@ -70,7 +70,10 @@ def generate(h, image_path: str, seed: int, out_glb: str) -> dict:
     white = work / "shape.glb"
     mesh.export(str(white))
     obj_out = work / "textured.obj"
-    result = h["paint"](mesh_path=str(white), image_path=image_path, output_mesh_path=str(obj_out))
+    paint_kwargs = {}
+    if "save_glb" in inspect.signature(h["paint"].__call__).parameters:
+        paint_kwargs["save_glb"] = False   # bpy is not installed; convert the OBJ with trimesh below
+    result = h["paint"](mesh_path=str(white), image_path=image_path, output_mesh_path=str(obj_out), **paint_kwargs)
     torch.cuda.synchronize()
     t2 = time.perf_counter()
 

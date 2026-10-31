@@ -15,7 +15,7 @@ set -euo pipefail
 export MAMBA_ROOT_PREFIX=/content/mamba
 export TORCH_CUDA_ARCH_LIST="8.0"
 export MAX_JOBS="${MAX_JOBS:-4}"
-MM=/content/bin/micromamba
+MM=/content/bin/micromamba   # always run with MAMBA_ROOT_PREFIX=/content/mamba (exported above)
 LOG=/content/install_logs
 mkdir -p "$LOG"
 
@@ -53,9 +53,18 @@ case "$step" in
     rm -rf /content/Hunyuan3D-2.1
     git clone https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1.git /content/Hunyuan3D-2.1
     cd /content/Hunyuan3D-2.1
-    $MM run -n hunyuan pip install -r requirements.txt 2>&1 | tee "$LOG/hunyuan_requirements.log" | tail -5
-    (cd hy3dpaint/custom_rasterizer && $MM run -n hunyuan bash -c "export CUDA_HOME=$CUDA_HOME PATH=$CUDA_HOME/bin:\$PATH; pip install -e ." 2>&1 | tail -5)
+    # bpy==4.0 has no wheel for this platform (pip: "No matching distribution"); it is only used to convert
+    # OBJ -> GLB, and gen_hunyuan3d.py converts with trimesh instead. Install everything else.
+    grep -viE '^\s*bpy' requirements.txt > /tmp/hy_requirements.txt
+    $MM run -n hunyuan pip install -r /tmp/hy_requirements.txt 2>&1 | tee "$LOG/hunyuan_requirements.log" | tail -8
+    grep -rn "bpy" --include=*.py . | head -20 || true
+    $MM run -n hunyuan pip install pybind11 setuptools wheel ninja 2>&1 | tail -1
+    # build isolation hides torch from setup.py ("Getting requirements to build editable" fails), so turn it off
+    (cd hy3dpaint/custom_rasterizer && $MM run -n hunyuan bash -c "export CUDA_HOME=$CUDA_HOME PATH=$CUDA_HOME/bin:\$PATH; pip install --no-build-isolation -e ." 2>&1 | tail -8)
     (cd hy3dpaint/DifferentiableRenderer && $MM run -n hunyuan bash compile_mesh_painter.sh 2>&1 | tail -5)
+    # mesh_utils.py does `import bpy` at module level but only uses it to convert OBJ -> GLB; a stub lets the import
+    # succeed, and gen_hunyuan3d.py asks for the OBJ and converts with trimesh instead.
+    printf '"""Stub: real bpy has no wheel here. Only convert_obj_to_glb needs it; the Week 5 script does not call that."""\n' > hy3dpaint/bpy.py
     mkdir -p hy3dpaint/ckpt
     wget -q -nc https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth -P hy3dpaint/ckpt
     $MM run -n hunyuan python -c "import torch; print('hunyuan env ok, torch', torch.__version__)"
