@@ -96,6 +96,19 @@ def _rot(azim_deg: float, elev_deg: float) -> np.ndarray:
     return rx @ ry
 
 
+def fill_small_holes(mask: np.ndarray, max_area: int = 64) -> np.ndarray:
+    """Close pin-holes left between splats, but keep real openings (gaps in a chair back, a handle, a table frame)."""
+    from scipy import ndimage
+
+    lab, n = ndimage.label(~mask)
+    if n == 0:
+        return mask
+    sizes = np.asarray(ndimage.sum(~mask, lab, range(1, n + 1)))
+    border = set(np.unique(np.concatenate([lab[0], lab[-1], lab[:, 0], lab[:, -1]])).tolist())
+    ids = [i + 1 for i in np.nonzero(sizes <= max_area)[0] if (i + 1) not in border]
+    return mask | np.isin(lab, ids) if ids else mask
+
+
 def render(points, colours, normals, azim_deg, elev_deg=15.0, size=512, radius=None, splat=3):
     """Orthographic z-buffer render on a white background. Returns (rgb uint8 HxWx3, mask bool HxW)."""
     from scipy import ndimage
@@ -132,7 +145,7 @@ def render(points, colours, normals, azim_deg, elev_deg=15.0, size=512, radius=N
     mask = np.zeros(size * size, dtype=bool)
     mask[pix] = True
     mask = ndimage.binary_closing(mask.reshape(size, size), structure=np.ones((3, 3)), iterations=1)
-    mask = ndimage.binary_fill_holes(mask)
+    mask = fill_small_holes(mask)   # NOT binary_fill_holes: real openings (chair back, handles) must stay open
     return img.reshape(size, size, 3), mask
 
 

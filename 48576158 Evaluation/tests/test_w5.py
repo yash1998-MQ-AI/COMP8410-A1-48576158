@@ -161,3 +161,22 @@ def test_mesh_stats_ignore_uv_seams_and_count_pieces():
     assert RS.mesh_stats(two)["n_components"] == 2
     open_mesh = trimesh.Trimesh(vertices=box.vertices, faces=box.faces[:-1], process=False)
     assert RS.mesh_stats(open_mesh)["watertight"] == 0.0
+
+
+def test_real_openings_stay_open_in_the_silhouette():
+    # a flat ring seen face-on: the hole is a real opening and must not be filled (it was, by binary_fill_holes)
+    ring = trimesh.creation.annulus(r_min=0.35, r_max=0.5, height=0.05)
+    pts, col, nrm, _ = RS.sample_points(ring, 300000)
+    pts, nrm = RS.orient(pts, nrm, "y")
+    # annulus axis is z, so azimuth 0 looks straight through the hole
+    _, mask = RS.render(pts, col, nrm, 0, 0, 256)
+    ys, xs = np.where(mask)
+    cy, cx = int(ys.mean()), int(xs.mean())
+    assert not mask[cy, cx]                                   # centre of the ring is empty
+    assert mask.sum() < 0.75 * np.pi * ((xs.max() - xs.min()) / 2) ** 2   # clearly less than a filled disc
+
+
+def test_pinholes_between_splats_are_closed():
+    m = np.ones((40, 40), bool); m[20, 20] = False; m[10:20, 25:35] = False   # 1-px pinhole and a 100-px real hole
+    out = RS.fill_small_holes(m)
+    assert out[20, 20] and not out[15, 30]

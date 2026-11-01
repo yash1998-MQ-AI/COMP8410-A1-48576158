@@ -75,7 +75,7 @@ PY
     grep -viE '^\s*bpy' requirements.txt > /tmp/hy_requirements.txt
     $MM run -n hunyuan pip install -r /tmp/hy_requirements.txt 2>&1 | tee "$LOG/hunyuan_requirements.log" | tail -8
     grep -rn "bpy" --include=*.py . | head -20 || true
-    $MM run -n hunyuan pip install pybind11 setuptools wheel ninja 2>&1 | tail -1
+    $MM run -n hunyuan pip install pybind11 "setuptools<70" wheel ninja 2>&1 | tail -1   # setuptools >=70 drops pkg_resources, which pytorch_lightning imports
     # build isolation hides torch from setup.py ("Getting requirements to build editable" fails), so turn it off
     (cd hy3dpaint/custom_rasterizer && $MM run -n hunyuan bash -c "export CUDA_HOME=$CUDA_HOME PATH=$CUDA_HOME/bin:\$PATH; pip install --no-build-isolation -e ." 2>&1 | tail -8)
     (cd hy3dpaint/DifferentiableRenderer && $MM run -n hunyuan bash compile_mesh_painter.sh 2>&1 | tail -5)
@@ -101,6 +101,9 @@ PY
     apt-get -qq install -y zstd > /dev/null 2>&1 || true
     zstd -dc "$src/w5_envs.tar.zst" | tar -C / -xf -
     $MM --version
+    # hotfix for envs packed before the setuptools pin existed: pytorch_lightning needs pkg_resources
+    $MM run -n hunyuan pip install -q "setuptools<70" 2>&1 | tail -1
+    $MM run -n hunyuan python -c "import pkg_resources; print('pkg_resources ok')" 2>&1 | tail -1
     ;;
 
   *) echo "unknown step $step"; exit 2 ;;
