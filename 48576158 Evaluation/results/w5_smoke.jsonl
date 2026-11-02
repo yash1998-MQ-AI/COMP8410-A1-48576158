@@ -1,0 +1,45 @@
+{"pair": "w5", "model": "hunyuan3d", "item_id": "all", "metric": "load_time_s", "value": 75.28429328899983, "seed": null, "meta": {"gpu": "NVIDIA A100-SXM4-40GB", "gpu_gb": 39.5, "torch": "2.5.1+cu124"}, "ts": 1793423744.9365187}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "latency_s", "value": 205.8227567519989, "seed": 0, "meta": {"stages": {"shape": 31.760749938999652, "texture_export": 173.75128202299857}}, "ts": 1793424156.3001313}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "peak_vram_gb", "value": 20.614185333251953, "seed": 0, "meta": {"stages": {"shape": 31.760749938999652, "texture_export": 173.75128202299857}}, "ts": 1793424156.3042696}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "latency_shape_s", "value": 31.760749938999652, "seed": 0, "meta": {}, "ts": 1793424156.3064985}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "latency_texture_export_s", "value": 173.75128202299857, "seed": 0, "meta": {}, "ts": 1793424156.3085952}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "peak_vram_reserved_gb", "value": 23.462890625, "seed": 0, "meta": {}, "ts": 1793424156.3111339}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793424156.3131707}
+{"pair": "w5", "model": "trellis2", "item_id": "all", "metric": "load_time_s", "value": 232.73352194399922, "seed": null, "meta": {"gpu": "NVIDIA A100-SXM4-40GB", "gpu_gb": 39.5, "torch": "2.6.0+cu124"}, "ts": 1793425692.0790243}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "gen_ok", "value": 0.0, "seed": 0, "meta": {"error": "AttributeError(\"'DINOv3ViTModel' object has no attribute 'layer'\")"}, "ts": 1793425693.47969}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "clip_i_best", "value": 0.8450003862380981, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.616943}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "clip_i_mean", "value": 0.82444828748703, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.621144}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "dino_best", "value": 0.732426643371582, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.62421}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "dino_mean", "value": 0.6914030313491821, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.6265824}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "sil_iou_best", "value": 0.9194844966186041, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.6289592}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "clip_i_best_mismatch", "value": 0.6755189895629883, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.631318}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "dino_best_mismatch", "value": 0.06551575660705566, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.6337306}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.6361039}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.638454}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "n_vertices", "value": 46939.0, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.6421378}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.6445625}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "n_components", "value": 54.0, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.6469886}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.6494443}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "glb_size_mb", "value": 2.102668, "seed": 0, "meta": {"best_view_dino": 6, "best_view_iou": 4}, "ts": 1793426800.651666}
+{"pair": "w5", "model": "trellis2", "item_id": "all", "metric": "load_time_s", "value": 135.9809286260006, "seed": null, "meta": {"gpu": "NVIDIA A100-SXM4-40GB", "gpu_gb": 39.5, "torch": "2.6.0+cu124"}, "ts": 1793427170.8464494}
+{"pair": "w5", "model": "trellis2", "item_id": "all", "metric": "load_time_s", "value": 170.85874685400017, "seed": null, "meta": {"gpu": "NVIDIA A100-SXM4-40GB", "gpu_gb": 39.5, "torch": "2.6.0+cu124"}, "ts": 1793441251.206501}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "latency_s", "value": 260.0558831640001, "seed": 0, "meta": {"stages": {"shape": 149.2128341900002, "texture_export": 110.84004145900008}}, "ts": 1793441883.666259}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "peak_vram_gb", "value": 14.767492294311523, "seed": 0, "meta": {"stages": {"shape": 149.2128341900002, "texture_export": 110.84004145900008}}, "ts": 1793441883.671277}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "latency_shape_s", "value": 149.2128341900002, "seed": 0, "meta": {}, "ts": 1793441883.6756504}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "latency_texture_export_s", "value": 110.84004145900008, "seed": 0, "meta": {}, "ts": 1793441883.6785553}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "peak_vram_reserved_gb", "value": 16.859375, "seed": 0, "meta": {}, "ts": 1793441883.6816683}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793441883.685684}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "clip_i_best", "value": 0.9307823777198792, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2012181}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "clip_i_mean", "value": 0.9201139211654663, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2062123}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "dino_best", "value": 0.7664139270782471, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.208967}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "dino_mean", "value": 0.7099738121032715, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2116985}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "sil_iou_best", "value": 0.9441461267605634, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2143035}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "clip_i_best_mismatch", "value": 0.7484115958213806, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2182732}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "dino_best_mismatch", "value": 0.060762081295251846, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2215533}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2241743}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "n_faces", "value": 936887.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.226699}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "n_vertices", "value": 900554.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2292562}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2317905}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "n_components", "value": 153.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.234165}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2365665}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "glb_size_mb", "value": 86.883644, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793441940.2739897}

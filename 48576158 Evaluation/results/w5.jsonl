@@ -1,0 +1,522 @@
+{"pair": "w5", "model": "trellis2", "item_id": "all", "metric": "load_time_s", "value": 129.4955732049998, "seed": null, "meta": {"gpu": "NVIDIA A100-SXM4-40GB", "gpu_gb": 39.5, "torch": "2.6.0+cu124"}, "ts": 1793443053.0100918}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "latency_s", "value": 201.315093101, "seed": 0, "meta": {"stages": {"shape": 85.98719854599995, "texture_export": 115.32679385999973}}, "ts": 1793443434.2182171}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "peak_vram_gb", "value": 14.767691135406494, "seed": 0, "meta": {"stages": {"shape": 85.98719854599995, "texture_export": 115.32679385999973}}, "ts": 1793443434.2204096}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "latency_shape_s", "value": 85.98719854599995, "seed": 0, "meta": {}, "ts": 1793443434.2220037}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "latency_texture_export_s", "value": 115.32679385999973, "seed": 0, "meta": {}, "ts": 1793443434.2234747}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "peak_vram_reserved_gb", "value": 16.857421875, "seed": 0, "meta": {}, "ts": 1793443434.2253015}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793443434.2339954}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "latency_s", "value": 224.6288451420005, "seed": 0, "meta": {"stages": {"shape": 122.66877372699992, "texture_export": 101.95902808999972}}, "ts": 1793443658.9132583}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "peak_vram_gb", "value": 5.8949384689331055, "seed": 0, "meta": {"stages": {"shape": 122.66877372699992, "texture_export": 101.95902808999972}}, "ts": 1793443658.9155583}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "latency_shape_s", "value": 122.66877372699992, "seed": 0, "meta": {}, "ts": 1793443658.9172692}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "latency_texture_export_s", "value": 101.95902808999972, "seed": 0, "meta": {}, "ts": 1793443658.9189036}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "peak_vram_reserved_gb", "value": 6.923828125, "seed": 0, "meta": {}, "ts": 1793443658.9206195}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793443658.928099}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "latency_s", "value": 530.622190436, "seed": 0, "meta": {"stages": {"shape": 47.274814976000016, "texture_export": 483.34652896100033}}, "ts": 1793444189.5775166}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "peak_vram_gb", "value": 4.6443867683410645, "seed": 0, "meta": {"stages": {"shape": 47.274814976000016, "texture_export": 483.34652896100033}}, "ts": 1793444189.5799985}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "latency_shape_s", "value": 47.274814976000016, "seed": 0, "meta": {}, "ts": 1793444189.5818055}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "latency_texture_export_s", "value": 483.34652896100033, "seed": 0, "meta": {}, "ts": 1793444189.5834827}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "peak_vram_reserved_gb", "value": 5.533203125, "seed": 0, "meta": {}, "ts": 1793444189.5854907}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793444189.5936556}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "latency_s", "value": 216.0945032720001, "seed": 0, "meta": {"stages": {"shape": 97.83364300599987, "texture_export": 118.25962026100024}}, "ts": 1793444405.7110877}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "peak_vram_gb", "value": 3.1545472145080566, "seed": 0, "meta": {"stages": {"shape": 97.83364300599987, "texture_export": 118.25962026100024}}, "ts": 1793444405.7133906}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "latency_shape_s", "value": 97.83364300599987, "seed": 0, "meta": {}, "ts": 1793444405.7149844}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "latency_texture_export_s", "value": 118.25962026100024, "seed": 0, "meta": {}, "ts": 1793444405.716597}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "peak_vram_reserved_gb", "value": 3.560546875, "seed": 0, "meta": {}, "ts": 1793444405.7183163}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793444405.7256246}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "latency_s", "value": 912.4520868509999, "seed": 0, "meta": {"stages": {"shape": 21.132047815000078, "texture_export": 891.3188267969999}}, "ts": 1793445318.1954484}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "peak_vram_gb", "value": 2.850375175476074, "seed": 0, "meta": {"stages": {"shape": 21.132047815000078, "texture_export": 891.3188267969999}}, "ts": 1793445318.1978717}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "latency_shape_s", "value": 21.132047815000078, "seed": 0, "meta": {}, "ts": 1793445318.1995366}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "latency_texture_export_s", "value": 891.3188267969999, "seed": 0, "meta": {}, "ts": 1793445318.2011836}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "peak_vram_reserved_gb", "value": 3.89453125, "seed": 0, "meta": {}, "ts": 1793445318.2032037}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793445318.2116408}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "latency_s", "value": 199.467791864, "seed": 0, "meta": {"stages": {"shape": 24.79771110100046, "texture_export": 174.66888723699958}}, "ts": 1793445517.7029204}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "peak_vram_gb", "value": 3.1960153579711914, "seed": 0, "meta": {"stages": {"shape": 24.79771110100046, "texture_export": 174.66888723699958}}, "ts": 1793445517.7054021}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "latency_shape_s", "value": 24.79771110100046, "seed": 0, "meta": {}, "ts": 1793445517.7076545}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "latency_texture_export_s", "value": 174.66888723699958, "seed": 0, "meta": {}, "ts": 1793445517.7098427}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "peak_vram_reserved_gb", "value": 3.625, "seed": 0, "meta": {}, "ts": 1793445517.712285}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793445517.7198105}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "latency_s", "value": 176.84748854200006, "seed": 0, "meta": {"stages": {"shape": 27.90507146699929, "texture_export": 148.9412149310001}}, "ts": 1793445694.5858343}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "peak_vram_gb", "value": 4.518601894378662, "seed": 0, "meta": {"stages": {"shape": 27.90507146699929, "texture_export": 148.9412149310001}}, "ts": 1793445694.5882363}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "latency_shape_s", "value": 27.90507146699929, "seed": 0, "meta": {}, "ts": 1793445694.5901384}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "latency_texture_export_s", "value": 148.9412149310001, "seed": 0, "meta": {}, "ts": 1793445694.5921633}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "peak_vram_reserved_gb", "value": 4.908203125, "seed": 0, "meta": {}, "ts": 1793445694.5942733}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793445694.60194}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "latency_s", "value": 185.71130744999937, "seed": 0, "meta": {"stages": {"shape": 63.43571288200019, "texture_export": 122.27433313799975}}, "ts": 1793445880.337195}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "peak_vram_gb", "value": 13.007561683654785, "seed": 0, "meta": {"stages": {"shape": 63.43571288200019, "texture_export": 122.27433313799975}}, "ts": 1793445880.3397908}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "latency_shape_s", "value": 63.43571288200019, "seed": 0, "meta": {}, "ts": 1793445880.341427}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "latency_texture_export_s", "value": 122.27433313799975, "seed": 0, "meta": {}, "ts": 1793445880.342991}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "peak_vram_reserved_gb", "value": 14.494140625, "seed": 0, "meta": {}, "ts": 1793445880.3447094}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793445880.3664238}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "latency_s", "value": 370.7140434949997, "seed": 0, "meta": {"stages": {"shape": 47.7454127179999, "texture_export": 322.96760795999944}}, "ts": 1793446251.1272652}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "peak_vram_gb", "value": 10.980811595916748, "seed": 0, "meta": {"stages": {"shape": 47.7454127179999, "texture_export": 322.96760795999944}}, "ts": 1793446251.129893}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "latency_shape_s", "value": 47.7454127179999, "seed": 0, "meta": {}, "ts": 1793446251.131666}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "latency_texture_export_s", "value": 322.96760795999944, "seed": 0, "meta": {}, "ts": 1793446251.1334214}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "peak_vram_reserved_gb", "value": 11.46875, "seed": 0, "meta": {}, "ts": 1793446251.1352985}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793446251.1434507}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "latency_s", "value": 562.3708228120004, "seed": 0, "meta": {"stages": {"shape": 30.115413749000254, "texture_export": 532.253539241}}, "ts": 1793446813.553925}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "peak_vram_gb", "value": 5.703507423400879, "seed": 0, "meta": {"stages": {"shape": 30.115413749000254, "texture_export": 532.253539241}}, "ts": 1793446813.5563946}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "latency_shape_s", "value": 30.115413749000254, "seed": 0, "meta": {}, "ts": 1793446813.5581095}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "latency_texture_export_s", "value": 532.253539241, "seed": 0, "meta": {}, "ts": 1793446813.5597234}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "peak_vram_reserved_gb", "value": 6.58984375, "seed": 0, "meta": {}, "ts": 1793446813.561491}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793446813.569068}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "latency_s", "value": 167.36524694199943, "seed": 0, "meta": {"stages": {"shape": 29.031472143999963, "texture_export": 138.3321499470003}}, "ts": 1793446980.9611213}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "peak_vram_gb", "value": 5.541348934173584, "seed": 0, "meta": {"stages": {"shape": 29.031472143999963, "texture_export": 138.3321499470003}}, "ts": 1793446980.9634697}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "latency_shape_s", "value": 29.031472143999963, "seed": 0, "meta": {}, "ts": 1793446980.9651775}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "latency_texture_export_s", "value": 138.3321499470003, "seed": 0, "meta": {}, "ts": 1793446980.9667296}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "peak_vram_reserved_gb", "value": 6.86328125, "seed": 0, "meta": {}, "ts": 1793446980.978783}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793446980.985959}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "latency_s", "value": 207.71130335599992, "seed": 0, "meta": {"stages": {"shape": 53.150151675000416, "texture_export": 154.55963854999936}}, "ts": 1793447188.7237005}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "peak_vram_gb", "value": 11.133459568023682, "seed": 0, "meta": {"stages": {"shape": 53.150151675000416, "texture_export": 154.55963854999936}}, "ts": 1793447188.7260938}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "latency_shape_s", "value": 53.150151675000416, "seed": 0, "meta": {}, "ts": 1793447188.727787}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "latency_texture_export_s", "value": 154.55963854999936, "seed": 0, "meta": {}, "ts": 1793447188.729452}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "peak_vram_reserved_gb", "value": 11.64453125, "seed": 0, "meta": {}, "ts": 1793447188.7311907}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793447188.7387846}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "latency_s", "value": 174.81197298200004, "seed": 0, "meta": {"stages": {"shape": 65.67200125999989, "texture_export": 109.13787423699978}}, "ts": 1793447363.59049}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "peak_vram_gb", "value": 15.348578929901123, "seed": 0, "meta": {"stages": {"shape": 65.67200125999989, "texture_export": 109.13787423699978}}, "ts": 1793447363.5929465}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "latency_shape_s", "value": 65.67200125999989, "seed": 0, "meta": {}, "ts": 1793447363.594624}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "latency_texture_export_s", "value": 109.13787423699978, "seed": 0, "meta": {}, "ts": 1793447363.596224}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "peak_vram_reserved_gb", "value": 18.73046875, "seed": 0, "meta": {}, "ts": 1793447363.598088}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793447363.6058419}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "clip_i_best", "value": 0.9340855479240417, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.5560596}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "clip_i_mean", "value": 0.9190787076950073, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.5584035}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "dino_best", "value": 0.745046079158783, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.5602074}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "dino_mean", "value": 0.700018048286438, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.561732}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "sil_iou_best", "value": 0.9439971844617483, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.563227}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "clip_i_best_mismatch", "value": 0.7443833351135254, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.564713}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "dino_best_mismatch", "value": 0.061067551374435425, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.566244}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.5677314}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "n_faces", "value": 935162.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.5693045}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "n_vertices", "value": 898212.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.5707622}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.5721676}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "n_components", "value": 154.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.573623}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.5750575}
+{"pair": "w5", "model": "trellis2", "item_id": "c01_topiary", "metric": "glb_size_mb", "value": 86.76474, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448097.5764906}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "clip_i_best", "value": 0.9239118099212646, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.355394}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "clip_i_mean", "value": 0.8934648036956787, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.3577502}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "dino_best", "value": 0.6781772971153259, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.359463}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "dino_mean", "value": 0.6270433664321899, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.3612084}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "sil_iou_best", "value": 0.810426216049805, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.3627546}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "clip_i_best_mismatch", "value": 0.6792762875556946, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.364255}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "dino_best_mismatch", "value": 0.03652685135602951, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.3657475}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.367241}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "n_faces", "value": 989034.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.3688052}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "n_vertices", "value": 712595.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.3702831}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.3718166}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "n_components", "value": 520.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.3732798}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.3746955}
+{"pair": "w5", "model": "trellis2", "item_id": "c02_lamp", "metric": "glb_size_mb", "value": 71.491148, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 1}, "ts": 1793448117.3761}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "clip_i_best", "value": 0.8566365242004395, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.758732}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "clip_i_mean", "value": 0.7930662631988525, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7612486}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "dino_best", "value": 0.5352930426597595, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7629225}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "dino_mean", "value": 0.3720141649246216, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7644086}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "sil_iou_best", "value": 0.8300146470844385, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7659054}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "clip_i_best_mismatch", "value": 0.723848819732666, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.767385}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "dino_best_mismatch", "value": 0.10526558756828308, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7688186}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7703393}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "n_faces", "value": 982315.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7718024}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "n_vertices", "value": 739348.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7732875}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7746782}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "n_components", "value": 210.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7761335}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.7775369}
+{"pair": "w5", "model": "trellis2", "item_id": "c03_book", "metric": "glb_size_mb", "value": 76.383136, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448139.77899}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "clip_i_best", "value": 0.95734703540802, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.2898471}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "clip_i_mean", "value": 0.9222742319107056, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.2920609}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "dino_best", "value": 0.8495267629623413, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.2937114}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "dino_mean", "value": 0.7347999811172485, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.295319}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "sil_iou_best", "value": 0.8019000703729767, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.2967937}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "clip_i_best_mismatch", "value": 0.7102322578430176, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.2982588}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "dino_best_mismatch", "value": 0.1072041243314743, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.2996807}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.3010967}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "n_faces", "value": 976236.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.302585}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "n_vertices", "value": 666938.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.304048}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.3054612}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "n_components", "value": 2.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.3068917}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.3083541}
+{"pair": "w5", "model": "trellis2", "item_id": "c04_tumbler", "metric": "glb_size_mb", "value": 66.006548, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448159.3097663}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "clip_i_best", "value": 0.9446725249290466, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.681692}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "clip_i_mean", "value": 0.9242485761642456, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.684009}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "dino_best", "value": 0.8936211466789246, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.685677}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "dino_mean", "value": 0.8079354763031006, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.6871722}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "sil_iou_best", "value": 0.4818837431575289, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.6886547}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "clip_i_best_mismatch", "value": 0.8308188915252686, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.6900673}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "dino_best_mismatch", "value": 0.24869543313980103, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.6915004}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.6929886}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "n_faces", "value": 934811.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.6943774}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "n_vertices", "value": 653442.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.6958137}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.6972396}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "n_components", "value": 11.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.6986384}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.7000523}
+{"pair": "w5", "model": "trellis2", "item_id": "c05_chair", "metric": "glb_size_mb", "value": 69.747336, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448178.7014306}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "clip_i_best", "value": 0.949073314666748, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.13989}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "clip_i_mean", "value": 0.8958393335342407, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1423082}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "dino_best", "value": 0.7609106302261353, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1440814}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "dino_mean", "value": 0.6263947486877441, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.145601}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "sil_iou_best", "value": 0.7966758589848699, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1471586}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "clip_i_best_mismatch", "value": 0.7090689539909363, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1488004}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "dino_best_mismatch", "value": 0.08147084712982178, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1503117}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1518435}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "n_faces", "value": 934865.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1533625}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "n_vertices", "value": 630186.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1547894}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1562073}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.157606}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1590848}
+{"pair": "w5", "model": "trellis2", "item_id": "c06_handchair", "metric": "glb_size_mb", "value": 60.343064, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448198.1739926}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "clip_i_best", "value": 0.9323330521583557, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.6915455}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "clip_i_mean", "value": 0.8986654877662659, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.6937895}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "dino_best", "value": 0.8628232479095459, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.6955655}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "dino_mean", "value": 0.6605428457260132, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.697138}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "sil_iou_best", "value": 0.8086319911466757, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.6986418}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "clip_i_best_mismatch", "value": 0.7623712420463562, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.7001245}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "dino_best_mismatch", "value": 0.13965019583702087, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.7016141}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.703185}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "n_faces", "value": 970955.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.7046428}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "n_vertices", "value": 660589.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.7061043}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.7075832}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "n_components", "value": 17.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.7090545}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.7105231}
+{"pair": "w5", "model": "trellis2", "item_id": "c07_daybed", "metric": "glb_size_mb", "value": 65.885216, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793448217.711974}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "clip_i_best", "value": 0.9047846794128418, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.8958478}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "clip_i_mean", "value": 0.8778594732284546, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.8984406}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "dino_best", "value": 0.652637779712677, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.9003685}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "dino_mean", "value": 0.601405143737793, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.901983}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "sil_iou_best", "value": 0.8764549258273108, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.903569}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "clip_i_best_mismatch", "value": 0.7121971845626831, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.9051774}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "dino_best_mismatch", "value": 0.204170823097229, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.906699}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.9082866}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "n_faces", "value": 976786.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.9097934}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "n_vertices", "value": 633743.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.9112756}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.9128366}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "n_components", "value": 2.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.914359}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.926836}
+{"pair": "w5", "model": "trellis2", "item_id": "c08_pouf", "metric": "glb_size_mb", "value": 67.868956, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 0}, "ts": 1793448236.9284434}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "clip_i_best", "value": 0.9497730731964111, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.9545863}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "clip_i_mean", "value": 0.9242780804634094, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.956922}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "dino_best", "value": 0.8621556758880615, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.9587033}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "dino_mean", "value": 0.7489424347877502, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.9602952}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "sil_iou_best", "value": 0.8160957607872824, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.961822}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "clip_i_best_mismatch", "value": 0.8222552537918091, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.9633875}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "dino_best_mismatch", "value": 0.23145373165607452, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.9649763}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.966533}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "n_faces", "value": 956467.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.9682417}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "n_vertices", "value": 761249.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.969803}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.9714482}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "n_components", "value": 59.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.9730773}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.9746664}
+{"pair": "w5", "model": "trellis2", "item_id": "c09_armchair", "metric": "glb_size_mb", "value": 68.052268, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448259.976233}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "clip_i_best", "value": 0.8905015587806702, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.7774203}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "clip_i_mean", "value": 0.8802498579025269, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.7804155}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "dino_best", "value": 0.8029047846794128, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.783067}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "dino_mean", "value": 0.7615857124328613, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.7856011}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "sil_iou_best", "value": 0.7878085803307502, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.7879348}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "clip_i_best_mismatch", "value": 0.7223899364471436, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.7902594}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "dino_best_mismatch", "value": 0.062077607959508896, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.7925603}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.7949953}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "n_faces", "value": 970033.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.7973235}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "n_vertices", "value": 694749.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.799721}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.814545}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "n_components", "value": 11.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.8170698}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.8194425}
+{"pair": "w5", "model": "trellis2", "item_id": "c10_coffeetable", "metric": "glb_size_mb", "value": 69.321096, "seed": 0, "meta": {"best_view_dino": 4, "best_view_iou": 7}, "ts": 1793448282.8218286}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "clip_i_best", "value": 0.9648045301437378, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.4988072}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "clip_i_mean", "value": 0.9315396547317505, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5011044}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "dino_best", "value": 0.9183789491653442, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5030556}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "dino_mean", "value": 0.5960643291473389, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5048084}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "sil_iou_best", "value": 0.8410693301997649, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5064833}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "clip_i_best_mismatch", "value": 0.732957124710083, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5082517}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "dino_best_mismatch", "value": 0.06791257113218307, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5099585}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5115886}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "n_faces", "value": 975262.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5132554}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "n_vertices", "value": 687292.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5149508}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.516559}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "n_components", "value": 92.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5182488}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5199542}
+{"pair": "w5", "model": "trellis2", "item_id": "c11_sofa", "metric": "glb_size_mb", "value": 62.372628, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793448305.5215514}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "clip_i_best", "value": 0.8998845815658569, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.8258355}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "clip_i_mean", "value": 0.8569043874740601, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.828183}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "dino_best", "value": 0.722606360912323, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.8299303}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "dino_mean", "value": 0.6627148985862732, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.831491}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "sil_iou_best", "value": 0.9216190551554958, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.833038}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "clip_i_best_mismatch", "value": 0.6651719212532043, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.8345094}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "dino_best_mismatch", "value": -0.03922923281788826, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.8450391}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.848271}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "n_faces", "value": 957450.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.849826}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "n_vertices", "value": 660784.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.851352}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.8528965}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "n_components", "value": 2.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.8543892}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.8558438}
+{"pair": "w5", "model": "trellis2", "item_id": "c12_bin", "metric": "glb_size_mb", "value": 67.465024, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 4}, "ts": 1793448327.8572652}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "clip_i_best", "value": 0.8720899820327759, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.0297112}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "clip_i_mean", "value": 0.84406578540802, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.0321045}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "dino_best", "value": 0.8943382501602173, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.033841}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "dino_mean", "value": 0.6751707792282104, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.0355175}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "sil_iou_best", "value": 0.7506670022652907, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.037078}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "clip_i_best_mismatch", "value": 0.7061089277267456, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.03852}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "dino_best_mismatch", "value": 0.04846646636724472, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.0400486}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.0414777}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "n_faces", "value": 986777.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.0429494}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "n_vertices", "value": 816924.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.0443563}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "watertight", "value": 0.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.0457356}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "n_components", "value": 171.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.047181}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.0485842}
+{"pair": "w5", "model": "trellis2", "item_id": "c13_heater", "metric": "glb_size_mb", "value": 71.090956, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 1}, "ts": 1793448347.0499966}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "all", "metric": "load_time_s", "value": 82.7389553439989, "seed": null, "meta": {"gpu": "NVIDIA A100-SXM4-40GB", "gpu_gb": 39.5, "torch": "2.5.1+cu124"}, "ts": 1793448875.1696022}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "latency_s", "value": 209.53344801099956, "seed": 0, "meta": {"stages": {"shape": 32.57871795400024, "texture_export": 176.60021902100016}}, "ts": 1793449085.6337528}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "peak_vram_gb", "value": 20.212037563323975, "seed": 0, "meta": {"stages": {"shape": 32.57871795400024, "texture_export": 176.60021902100016}}, "ts": 1793449085.6356626}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "latency_shape_s", "value": 32.57871795400024, "seed": 0, "meta": {}, "ts": 1793449085.6371956}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "latency_texture_export_s", "value": 176.60021902100016, "seed": 0, "meta": {}, "ts": 1793449085.6387677}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "peak_vram_reserved_gb", "value": 22.484375, "seed": 0, "meta": {}, "ts": 1793449085.6404333}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793449085.642532}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "latency_s", "value": 99.4197394010007, "seed": 0, "meta": {"stages": {"shape": 30.484529287999976, "texture_export": 68.68829182599984}}, "ts": 1793449185.0912824}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "peak_vram_gb", "value": 20.640535831451416, "seed": 0, "meta": {"stages": {"shape": 30.484529287999976, "texture_export": 68.68829182599984}}, "ts": 1793449185.0935597}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "latency_shape_s", "value": 30.484529287999976, "seed": 0, "meta": {}, "ts": 1793449185.0952184}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "latency_texture_export_s", "value": 68.68829182599984, "seed": 0, "meta": {}, "ts": 1793449185.0967472}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "peak_vram_reserved_gb", "value": 23.248046875, "seed": 0, "meta": {}, "ts": 1793449185.098499}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793449185.1006463}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "latency_s", "value": 98.2618756360007, "seed": 0, "meta": {"stages": {"shape": 30.374990985001205, "texture_export": 67.62304485799905}}, "ts": 1793449283.4065874}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "peak_vram_gb", "value": 20.62909507751465, "seed": 0, "meta": {"stages": {"shape": 30.374990985001205, "texture_export": 67.62304485799905}}, "ts": 1793449283.4092455}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "latency_shape_s", "value": 30.374990985001205, "seed": 0, "meta": {}, "ts": 1793449283.4110854}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "latency_texture_export_s", "value": 67.62304485799905, "seed": 0, "meta": {}, "ts": 1793449283.4128354}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "peak_vram_reserved_gb", "value": 23.482421875, "seed": 0, "meta": {}, "ts": 1793449283.414705}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793449283.417159}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "latency_s", "value": 87.40283721999913, "seed": 0, "meta": {"stages": {"shape": 30.2501582219993, "texture_export": 56.911670339999546}}, "ts": 1793449370.8662207}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "peak_vram_gb", "value": 20.70474338531494, "seed": 0, "meta": {"stages": {"shape": 30.2501582219993, "texture_export": 56.911670339999546}}, "ts": 1793449370.868724}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "latency_shape_s", "value": 30.2501582219993, "seed": 0, "meta": {}, "ts": 1793449370.8706536}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "latency_texture_export_s", "value": 56.911670339999546, "seed": 0, "meta": {}, "ts": 1793449370.8726892}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "peak_vram_reserved_gb", "value": 23.287109375, "seed": 0, "meta": {}, "ts": 1793449370.875014}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793449370.877906}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "latency_s", "value": 100.45834851799918, "seed": 0, "meta": {"stages": {"shape": 30.342886344000362, "texture_export": 69.86604646100022}}, "ts": 1793449471.3796659}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "peak_vram_gb", "value": 20.58639907836914, "seed": 0, "meta": {"stages": {"shape": 30.342886344000362, "texture_export": 69.86604646100022}}, "ts": 1793449471.382283}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "latency_shape_s", "value": 30.342886344000362, "seed": 0, "meta": {}, "ts": 1793449471.3845189}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "latency_texture_export_s", "value": 69.86604646100022, "seed": 0, "meta": {}, "ts": 1793449471.3866174}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "peak_vram_reserved_gb", "value": 23.189453125, "seed": 0, "meta": {}, "ts": 1793449471.3890326}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793449471.3920133}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "latency_s", "value": 91.31741947999944, "seed": 0, "meta": {"stages": {"shape": 30.357311827001467, "texture_export": 60.72540365099849}}, "ts": 1793449562.7418091}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "peak_vram_gb", "value": 20.641521453857422, "seed": 0, "meta": {"stages": {"shape": 30.357311827001467, "texture_export": 60.72540365099849}}, "ts": 1793449562.743863}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "latency_shape_s", "value": 30.357311827001467, "seed": 0, "meta": {}, "ts": 1793449562.7455156}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "latency_texture_export_s", "value": 60.72540365099849, "seed": 0, "meta": {}, "ts": 1793449562.7471027}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "peak_vram_reserved_gb", "value": 23.326171875, "seed": 0, "meta": {}, "ts": 1793449562.7489157}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793449562.751134}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "latency_s", "value": 119.4020916469999, "seed": 0, "meta": {"stages": {"shape": 30.74671863599906, "texture_export": 88.38004742800149}}, "ts": 1793449682.184794}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "peak_vram_gb", "value": 20.610012531280518, "seed": 0, "meta": {"stages": {"shape": 30.74671863599906, "texture_export": 88.38004742800149}}, "ts": 1793449682.1876018}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "latency_shape_s", "value": 30.74671863599906, "seed": 0, "meta": {}, "ts": 1793449682.189549}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "latency_texture_export_s", "value": 88.38004742800149, "seed": 0, "meta": {}, "ts": 1793449682.1915753}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "peak_vram_reserved_gb", "value": 22.857421875, "seed": 0, "meta": {}, "ts": 1793449682.1938622}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793449682.196735}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "latency_s", "value": 121.30606000700027, "seed": 0, "meta": {"stages": {"shape": 31.103158803000042, "texture_export": 89.92844841700025}}, "ts": 1793449803.5343451}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "peak_vram_gb", "value": 20.5967960357666, "seed": 0, "meta": {"stages": {"shape": 31.103158803000042, "texture_export": 89.92844841700025}}, "ts": 1793449803.5369158}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "latency_shape_s", "value": 31.103158803000042, "seed": 0, "meta": {}, "ts": 1793449803.5392466}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "latency_texture_export_s", "value": 89.92844841700025, "seed": 0, "meta": {}, "ts": 1793449803.5415592}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "peak_vram_reserved_gb", "value": 22.623046875, "seed": 0, "meta": {}, "ts": 1793449803.54414}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793449803.547256}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "latency_s", "value": 105.76417575699998, "seed": 0, "meta": {"stages": {"shape": 30.969190043000708, "texture_export": 74.54540454100061}}, "ts": 1793449909.3434522}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "peak_vram_gb", "value": 20.72020673751831, "seed": 0, "meta": {"stages": {"shape": 30.969190043000708, "texture_export": 74.54540454100061}}, "ts": 1793449909.3459237}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "latency_shape_s", "value": 30.969190043000708, "seed": 0, "meta": {}, "ts": 1793449909.3478801}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "latency_texture_export_s", "value": 74.54540454100061, "seed": 0, "meta": {}, "ts": 1793449909.3498561}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "peak_vram_reserved_gb", "value": 23.052734375, "seed": 0, "meta": {}, "ts": 1793449909.3521523}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793449909.3550003}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "latency_s", "value": 95.93557975600015, "seed": 0, "meta": {"stages": {"shape": 30.433002644000226, "texture_export": 65.25985996300005}}, "ts": 1793450005.3221862}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "peak_vram_gb", "value": 20.696962356567383, "seed": 0, "meta": {"stages": {"shape": 30.433002644000226, "texture_export": 65.25985996300005}}, "ts": 1793450005.3242886}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "latency_shape_s", "value": 30.433002644000226, "seed": 0, "meta": {}, "ts": 1793450005.3260815}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "latency_texture_export_s", "value": 65.25985996300005, "seed": 0, "meta": {}, "ts": 1793450005.3277714}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "peak_vram_reserved_gb", "value": 23.443359375, "seed": 0, "meta": {}, "ts": 1793450005.329582}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793450005.3318157}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "latency_s", "value": 89.9450763829991, "seed": 0, "meta": {"stages": {"shape": 30.44402555799934, "texture_export": 59.25868208400061}}, "ts": 1793450095.3089862}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "peak_vram_gb", "value": 20.702263832092285, "seed": 0, "meta": {"stages": {"shape": 30.44402555799934, "texture_export": 59.25868208400061}}, "ts": 1793450095.3115673}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "latency_shape_s", "value": 30.44402555799934, "seed": 0, "meta": {}, "ts": 1793450095.3137882}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "latency_texture_export_s", "value": 59.25868208400061, "seed": 0, "meta": {}, "ts": 1793450095.315889}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "peak_vram_reserved_gb", "value": 23.638671875, "seed": 0, "meta": {}, "ts": 1793450095.3183546}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793450095.321363}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "latency_s", "value": 145.2680300760003, "seed": 0, "meta": {"stages": {"shape": 31.628374805999556, "texture_export": 113.38725628700013}}, "ts": 1793450240.6232774}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "peak_vram_gb", "value": 20.68413543701172, "seed": 0, "meta": {"stages": {"shape": 31.628374805999556, "texture_export": 113.38725628700013}}, "ts": 1793450240.6253505}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "latency_shape_s", "value": 31.628374805999556, "seed": 0, "meta": {}, "ts": 1793450240.6269858}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "latency_texture_export_s", "value": 113.38725628700013, "seed": 0, "meta": {}, "ts": 1793450240.6285608}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "peak_vram_reserved_gb", "value": 23.462890625, "seed": 0, "meta": {}, "ts": 1793450240.63039}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793450240.6326056}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "latency_s", "value": 145.23901813000157, "seed": 0, "meta": {"stages": {"shape": 31.159817133000615, "texture_export": 113.8138350779991}}, "ts": 1793450385.9034426}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "peak_vram_gb", "value": 20.61013126373291, "seed": 0, "meta": {"stages": {"shape": 31.159817133000615, "texture_export": 113.8138350779991}}, "ts": 1793450385.9060457}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "latency_shape_s", "value": 31.159817133000615, "seed": 0, "meta": {}, "ts": 1793450385.9082325}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "latency_texture_export_s", "value": 113.8138350779991, "seed": 0, "meta": {}, "ts": 1793450385.910355}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "peak_vram_reserved_gb", "value": 23.267578125, "seed": 0, "meta": {}, "ts": 1793450385.9127831}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "gen_ok", "value": 1.0, "seed": 0, "meta": {}, "ts": 1793450385.915929}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "clip_i_best", "value": 0.8737583160400391, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.2759502}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "clip_i_mean", "value": 0.8392190337181091, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.2788706}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "dino_best", "value": 0.7187752723693848, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.2810397}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "dino_mean", "value": 0.6722115278244019, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.2828324}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "sil_iou_best", "value": 0.9170762711864406, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.2845063}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "clip_i_best_mismatch", "value": 0.7011070251464844, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.286226}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "dino_best_mismatch", "value": 0.07346068322658539, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.287922}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.289543}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.2912738}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "n_vertices", "value": 46571.0, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.29295}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.2945702}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "n_components", "value": 49.0, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.2962227}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.2978795}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c01_topiary", "metric": "glb_size_mb", "value": 2.096284, "seed": 0, "meta": {"best_view_dino": 2, "best_view_iou": 4}, "ts": 1793452246.2995098}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "clip_i_best", "value": 0.904548704624176, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.9376602}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "clip_i_mean", "value": 0.8832577466964722, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.9400344}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "dino_best", "value": 0.6293546557426453, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.9417434}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "dino_mean", "value": 0.6098265647888184, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.9433107}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "sil_iou_best", "value": 0.7112531810564211, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.94491}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "clip_i_best_mismatch", "value": 0.625033974647522, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.9464486}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "dino_best_mismatch", "value": 0.01208275556564331, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.9480526}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.9495144}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.951044}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "n_vertices", "value": 24868.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.952517}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.9662855}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.9680908}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.969632}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c02_lamp", "metric": "glb_size_mb", "value": 1.171304, "seed": 0, "meta": {"best_view_dino": 1, "best_view_iou": 0}, "ts": 1793452261.9711497}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "clip_i_best", "value": 0.8747209310531616, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5445056}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "clip_i_mean", "value": 0.7914409637451172, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5469031}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "dino_best", "value": 0.751318633556366, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5487776}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "dino_mean", "value": 0.5071187019348145, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5505416}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "sil_iou_best", "value": 0.9257130223303117, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5522258}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "clip_i_best_mismatch", "value": 0.7398474216461182, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5539277}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "dino_best_mismatch", "value": 0.10800561308860779, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5555449}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5572374}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5589128}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "n_vertices", "value": 23520.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5605707}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5622368}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5639439}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5655522}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c03_book", "metric": "glb_size_mb", "value": 1.421108, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452277.5674307}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "clip_i_best", "value": 0.9257994890213013, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.208865}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "clip_i_mean", "value": 0.8819634318351746, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.2112725}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "dino_best", "value": 0.7669227123260498, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.213141}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "dino_mean", "value": 0.6628393530845642, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.2148669}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "sil_iou_best", "value": 0.7367634854771784, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.2165124}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "clip_i_best_mismatch", "value": 0.6830229759216309, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.2181964}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "dino_best_mismatch", "value": 0.11163075268268585, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.2198417}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.221517}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.23504}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "n_vertices", "value": 23169.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.2367887}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.2384937}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.2402818}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.2421455}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c04_tumbler", "metric": "glb_size_mb", "value": 1.122056, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452293.2440097}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "clip_i_best", "value": 0.9321619272232056, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9056935}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "clip_i_mean", "value": 0.9168293476104736, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9082527}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "dino_best", "value": 0.8441792726516724, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9102056}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "dino_mean", "value": 0.7886408567428589, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9120378}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "sil_iou_best", "value": 0.4852689277149709, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9138067}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "clip_i_best_mismatch", "value": 0.8369880318641663, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.915557}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "dino_best_mismatch", "value": 0.26877468824386597, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9174273}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9192326}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9210217}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "n_vertices", "value": 25079.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9228897}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.92481}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.926597}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9283848}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c05_chair", "metric": "glb_size_mb", "value": 1.21604, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452308.9302104}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "clip_i_best", "value": 0.9483849406242371, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.5780652}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "clip_i_mean", "value": 0.9017373323440552, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.580468}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "dino_best", "value": 0.7592781782150269, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.5826206}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "dino_mean", "value": 0.6141969561576843, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.5845222}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "sil_iou_best", "value": 0.7746457977894815, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.5966628}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "clip_i_best_mismatch", "value": 0.6974800825119019, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.5986757}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "dino_best_mismatch", "value": 0.06771764904260635, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.6005235}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.6024082}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.6042037}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "n_vertices", "value": 21984.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.605964}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.6076405}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.6093948}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.611167}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c06_handchair", "metric": "glb_size_mb", "value": 1.113412, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452324.6131284}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "clip_i_best", "value": 0.9402865171432495, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4618552}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "clip_i_mean", "value": 0.8634222745895386, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4643464}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "dino_best", "value": 0.8575507402420044, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4661076}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "dino_mean", "value": 0.549166202545166, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4676664}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "sil_iou_best", "value": 0.8091756995210486, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4691901}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "clip_i_best_mismatch", "value": 0.7832745313644409, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4706683}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "dino_best_mismatch", "value": 0.13845781981945038, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4721239}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.473624}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4751601}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "n_vertices", "value": 29740.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4767897}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4783077}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "n_components", "value": 2.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4797754}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4812212}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c07_daybed", "metric": "glb_size_mb", "value": 1.60658, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452340.4826868}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "clip_i_best", "value": 0.9465775489807129, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2160408}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "clip_i_mean", "value": 0.9330720901489258, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2189167}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "dino_best", "value": 0.7803820371627808, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2214055}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "dino_mean", "value": 0.7256965637207031, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2238164}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "sil_iou_best", "value": 0.8850874501380792, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.226203}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "clip_i_best_mismatch", "value": 0.7722939252853394, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2285779}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "dino_best_mismatch", "value": 0.2517286539077759, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2308552}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.233123}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.235369}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "n_vertices", "value": 21532.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2376451}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2399173}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2424161}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2447674}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c08_pouf", "metric": "glb_size_mb", "value": 1.545472, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452356.2470312}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "clip_i_best", "value": 0.9578601121902466, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7082884}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "clip_i_mean", "value": 0.9287803173065186, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7106109}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "dino_best", "value": 0.8811554908752441, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7126644}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "dino_mean", "value": 0.7257055640220642, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7144353}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "sil_iou_best", "value": 0.8646514033190729, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.715992}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "clip_i_best_mismatch", "value": 0.8239187002182007, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7174492}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "dino_best_mismatch", "value": 0.26226353645324707, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7189896}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7204702}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7219791}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "n_vertices", "value": 22728.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7235782}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7250664}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.726523}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7387896}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c09_armchair", "metric": "glb_size_mb", "value": 1.147452, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 0}, "ts": 1793452371.7418833}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "clip_i_best", "value": 0.901501476764679, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.5983005}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "clip_i_mean", "value": 0.8942738771438599, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.6006935}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "dino_best", "value": 0.8279848694801331, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.6024218}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "dino_mean", "value": 0.7915555238723755, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.6039915}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "sil_iou_best", "value": 0.8078726155835758, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.6054802}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "clip_i_best_mismatch", "value": 0.8004192113876343, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.606964}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "dino_best_mismatch", "value": 0.041604772210121155, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.6083908}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.6099129}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.6115336}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "n_vertices", "value": 22458.0, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.6130683}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.6145675}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.616081}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.61755}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c10_coffeetable", "metric": "glb_size_mb", "value": 1.12522, "seed": 0, "meta": {"best_view_dino": 3, "best_view_iou": 1}, "ts": 1793452391.618982}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "clip_i_best", "value": 0.9675503969192505, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.2858272}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "clip_i_mean", "value": 0.9261176586151123, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.2882016}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "dino_best", "value": 0.9488142728805542, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.2899327}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "dino_mean", "value": 0.6343317031860352, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.2914786}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "sil_iou_best", "value": 0.8588732169894016, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.2930946}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "clip_i_best_mismatch", "value": 0.735934853553772, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.2947123}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "dino_best_mismatch", "value": 0.06226102262735367, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.2962441}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.297708}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.2991433}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "n_vertices", "value": 22522.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.300595}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.3128552}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.314562}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.316159}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c11_sofa", "metric": "glb_size_mb", "value": 1.104216, "seed": 0, "meta": {"best_view_dino": 0, "best_view_iou": 4}, "ts": 1793452411.3179543}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "clip_i_best", "value": 0.8850241303443909, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9708483}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "clip_i_mean", "value": 0.8727379441261292, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9733307}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "dino_best", "value": 0.5474706292152405, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9751747}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "dino_mean", "value": 0.5229932069778442, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9768364}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "sil_iou_best", "value": 0.9118013389381909, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9783952}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "clip_i_best_mismatch", "value": 0.6801338791847229, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9799469}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "dino_best_mismatch", "value": -0.030418753623962402, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9814825}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9830031}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9844801}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "n_vertices", "value": 21193.0, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9860082}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9875658}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "n_components", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9894295}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.9909928}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c12_bin", "metric": "glb_size_mb", "value": 1.043236, "seed": 0, "meta": {"best_view_dino": 5, "best_view_iou": 1}, "ts": 1793452428.992481}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "clip_i_best", "value": 0.9450463056564331, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.7725048}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "clip_i_mean", "value": 0.8816381692886353, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.7749841}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "dino_best", "value": 0.8987324237823486, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.77678}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "dino_mean", "value": 0.7035101652145386, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.7784219}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "sil_iou_best", "value": 0.7988767616827381, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.7800858}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "clip_i_best_mismatch", "value": 0.712203860282898, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.7816083}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "dino_best_mismatch", "value": 0.053541265428066254, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.7831678}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "render_ok", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.784691}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "n_faces", "value": 40000.0, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.7983227}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "n_vertices", "value": 27558.0, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.8001401}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "watertight", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.8017395}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "n_components", "value": 2.0, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.8033886}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "textured", "value": 1.0, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.8049185}
+{"pair": "w5", "model": "hunyuan3d", "item_id": "c13_heater", "metric": "glb_size_mb", "value": 1.286972, "seed": 0, "meta": {"best_view_dino": 7, "best_view_iou": 7}, "ts": 1793452444.8064673}
