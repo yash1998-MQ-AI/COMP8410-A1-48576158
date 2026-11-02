@@ -1,0 +1,5 @@
+metric,model,mean_within_item_sd
+dino_best,trellis2,0.0
+dino_best,hunyuan3d,0.0
+sil_iou_best,trellis2,0.0
+sil_iou_best,hunyuan3d,0.0
