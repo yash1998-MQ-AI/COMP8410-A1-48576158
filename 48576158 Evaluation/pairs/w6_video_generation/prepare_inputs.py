@@ -2,7 +2,7 @@
 
     python prepare_inputs.py --src /content/drive/MyDrive/comp8410_a1 --out /content/w6_work/inputs
 
---src is searched recursively for <item_id>.png (or .jpg), so it works with wherever the W2 listing copies sit.
+--src is searched recursively for <item_id>.png (or .jpg), excluding any path with an 'outputs' folder (W2 edited results). Use --src <BASE>/w2_listing.
 Writes a contact sheet (inputs_sheet.jpg) next to the inputs for a quick look.
 """
 
@@ -34,8 +34,10 @@ def crop_16x9(img: Image.Image, out_w: int = 1280) -> Image.Image:
 
 
 def find(src: Path, item: str) -> Path | None:
-    for ext in ("png", "jpg", "jpeg"):
-        hits = sorted(src.rglob(f"{item}.{ext}"))
+    """Original listing photo only. Drive also holds W2 EDITED outputs with the same file names (outputs/w2/...):
+    those are excluded, otherwise the models would be fed relit dusk/golden-hour images."""
+    for ext in ("jpg", "jpeg", "png"):
+        hits = [h for h in sorted(src.rglob(f"{item}.{ext}")) if "outputs" not in {p.lower() for p in h.parts}]
         if hits:
             return hits[0]
     return None

@@ -76,3 +76,12 @@ def test_read_video_roundtrip(tmp_path):
     iio.mimwrite(str(p), frames, fps=24)
     got, fps = S.read_video(p)
     assert len(got) == 8 and abs(fps - 24) < 1
+
+
+def test_find_skips_edited_outputs(tmp_path):
+    (tmp_path / "outputs" / "w2" / "flux").mkdir(parents=True)
+    (tmp_path / "w2_listing").mkdir()
+    Image.new("RGB", (8, 8)).save(tmp_path / "outputs" / "w2" / "flux" / "kitchen_b.png")
+    assert P.find(tmp_path, "kitchen_b") is None
+    Image.new("RGB", (8, 8)).save(tmp_path / "w2_listing" / "kitchen_b.jpg")
+    assert P.find(tmp_path, "kitchen_b").name == "kitchen_b.jpg"
