@@ -26,6 +26,7 @@ from w6_common import (FPS, INPUT_DIR, NUM_FRAMES, OUT_ROOT, PAIR, RESULTS, SEED
 
 WAN_ROOT = os.environ.get("WAN_ROOT", "/content/Wan2.2")
 WAN_CKPT = os.environ.get("WAN_CKPT", "/content/ckpt/Wan2.2-TI2V-5B")
+HF_REPO_WAN = "Wan-AI/Wan2.2-TI2V-5B"
 
 
 def _cuda_gb():
@@ -37,7 +38,15 @@ def _cuda_gb():
 def load_wan():
     sys.path.insert(0, WAN_ROOT)
     import wan
+    import wan.modules.attention as WA
+    import wan.modules.model as WM
     from wan.configs import WAN_CONFIGS
+
+    # model.py calls flash_attention() directly and asserts flash-attn is installed; there is no wheel for Colab's
+    # torch / Python 3.13. The repo's own attention() wrapper falls back to torch SDPA (same maths; batch of 1, no padding).
+    if not (WA.FLASH_ATTN_2_AVAILABLE or WA.FLASH_ATTN_3_AVAILABLE):
+        WM.flash_attention = WA.attention
+        print("[wan22] flash-attn not available: using the SDPA fallback attention")
 
     cfg = WAN_CONFIGS["ti2v-5B"]
     kw = dict(config=cfg, checkpoint_dir=WAN_CKPT, device_id=0, rank=0, t5_fsdp=False, dit_fsdp=False,
@@ -68,15 +77,33 @@ def gen_wan(h, image, prompt, seed, out, frames, steps=None):
 
 
 # ---------------------------------------------------------------- HunyuanVideo 1.5 (diffusers)
+def find_hunyuan_repo() -> str:
+    """HY_REPO env var wins. Otherwise list the community diffusers repos and take the best 480p I2V one."""
+    if os.environ.get("HY_REPO"):
+        return os.environ["HY_REPO"]
+    from huggingface_hub import HfApi
+
+    names = sorted(m.id for m in HfApi().list_models(author="hunyuanvideo-community", search="HunyuanVideo-1.5"))
+    print("[hunyuanvideo15] community repos:", names)
+    i2v = [n for n in names if "480p" in n and "i2v" in n]
+    for pref in ("step_distilled", "distilled", ""):
+        for n in i2v:
+            if pref in n and (pref or "distilled" not in n):
+                return n
+    raise RuntimeError(f"no 480p i2v repo among {names}; set HY_REPO to the right id")
+
+
 def load_hunyuan():
     import torch
     from diffusers import HunyuanVideo15ImageToVideoPipeline
 
-    pipe = HunyuanVideo15ImageToVideoPipeline.from_pretrained(
-        "tencent/HunyuanVideo-1.5", torch_dtype=torch.bfloat16, variant="480p_i2v_step_distilled")
+    repo = find_hunyuan_repo()
+    print("[hunyuanvideo15] using", repo)
+    pipe = HunyuanVideo15ImageToVideoPipeline.from_pretrained(repo, torch_dtype=torch.bfloat16)
     pipe.enable_model_cpu_offload()
     pipe.vae.enable_tiling()
-    return {"pipe": pipe}
+    steps = 8 if "step_distilled" in repo else 50          # step-distilled: 8-12 steps; the others need the full 50
+    return {"pipe": pipe, "repo": repo, "steps": steps}
 
 
 def gen_hunyuan(h, image, prompt, seed, out, frames, steps=None):
@@ -88,7 +115,7 @@ def gen_hunyuan(h, image, prompt, seed, out, frames, steps=None):
     pipe = h["pipe"]
     img = Image.open(image).convert("RGB").resize((s["width"], s["height"]), Image.LANCZOS)
     kw = dict(prompt=prompt, image=img, generator=torch.Generator("cpu").manual_seed(seed), num_frames=frames,
-              num_inference_steps=steps or s["steps"], height=s["height"], width=s["width"])
+              num_inference_steps=steps or h["steps"], height=s["height"], width=s["width"])
     ok = set(inspect.signature(pipe.__call__).parameters)
     t0 = time.perf_counter()
     frames_out = pipe(**{k: v for k, v in kw.items() if k in ok}).frames[0]
@@ -129,7 +156,8 @@ def main(argv=None) -> int:
     t0 = time.perf_counter()
     h = load()
     load_s = time.perf_counter() - t0
-    info = {"gpu": torch.cuda.get_device_name(0), "torch": torch.__version__, "settings": SETTINGS[model]}
+    info = {"gpu": torch.cuda.get_device_name(0), "torch": torch.__version__, "settings": SETTINGS[model],
+            "repo": h.get("repo", HF_REPO_WAN), "steps_used": h.get("steps", SETTINGS[model]["steps"])}
     print(f"[{model}] loaded in {load_s:.0f}s on {info['gpu']}")
     append(args.results, Record(PAIR, model, "all", "load_time_s", load_s, None, info))
 
