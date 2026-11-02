@@ -21,7 +21,7 @@ FPS = 24
 # Each model runs at its own recommended setting. This is a system-level comparison, not a matched-pixel one:
 # Wan 704x1280 (native 720p-class), Hunyuan 480x848 with 8 distilled steps. Scoring downsizes every frame to 224 px.
 SETTINGS = {
-    "wan22": {"height": 704, "width": 1280, "steps": 50, "guidance": 5.0, "offload": "none"},
+    "wan22": {"height": 704, "width": 1280, "steps": 50, "guidance": 5.0, "offload": "offload_model + t5_cpu"},
     "hunyuanvideo15": {"height": 480, "width": 848, "steps": 8, "guidance": 1.0, "offload": "model_cpu_offload"},
 }
 N_SCORE_FRAMES = 9           # evenly spaced frames used by CLIP / DINOv2

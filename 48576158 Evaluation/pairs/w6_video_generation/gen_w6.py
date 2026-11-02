@@ -50,7 +50,7 @@ def load_wan():
 
     cfg = WAN_CONFIGS["ti2v-5B"]
     kw = dict(config=cfg, checkpoint_dir=WAN_CKPT, device_id=0, rank=0, t5_fsdp=False, dit_fsdp=False,
-              use_sp=False, t5_cpu=False, init_on_cpu=False, convert_model_dtype=True)
+              use_sp=False, t5_cpu=True, init_on_cpu=False, convert_model_dtype=True)
     ok = set(inspect.signature(wan.WanTI2V.__init__).parameters)
     pipe = wan.WanTI2V(**{k: v for k, v in kw.items() if k in ok})
     return {"pipe": pipe, "cfg": cfg}
@@ -67,7 +67,7 @@ def gen_wan(h, image, prompt, seed, out, frames, steps=None):
     kw = dict(input_prompt=prompt, img=Image.open(image).convert("RGB"), size=SIZE_CONFIGS[key],
               max_area=MAX_AREA_CONFIGS[key], frame_num=frames, shift=cfg.sample_shift, sample_solver="unipc",
               sampling_steps=steps or s["steps"], guide_scale=s["guidance"], n_prompt="", seed=seed,
-              offload_model=False)
+              offload_model=True)
     ok = set(inspect.signature(pipe.generate).parameters)
     t0 = time.perf_counter()
     video = pipe.generate(**{k: v for k, v in kw.items() if k in ok})
@@ -178,7 +178,11 @@ def main(argv=None) -> int:
             out = video_path(model, item, seed, args.out_root)
             side = out.with_suffix(".json")
             if side.exists():
-                continue
+                try:
+                    if json.loads(side.read_text()).get("ok"):
+                        continue
+                except Exception:
+                    pass
             out.parent.mkdir(parents=True, exist_ok=True)
             torch.cuda.empty_cache()
             try:
