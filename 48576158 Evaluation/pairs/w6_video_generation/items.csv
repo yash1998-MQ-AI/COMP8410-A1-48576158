@@ -1,0 +1,7 @@
+item_id,source_png,kind,prompt,note
+main_bed_wide,main_bed_wide.png,interior,"A slow, smooth camera push-in toward the bed in a bright bedroom, steady real-estate walkthrough shot, soft natural light, no people.",
+main_balcony_view,main_balcony_view.png,interior,"A slow steady camera glide forward toward the balcony sliding doors, trees and sky visible outside, real-estate walkthrough, natural daylight, no people.",bright window
+kitchen_b,kitchen_b.png,interior,"A slow smooth camera dolly forward along the narrow kitchen, steady real-estate walkthrough, natural light, no people.",
+bedroom_door,bedroom_door.png,interior,"A gentle slow camera pan to the right across the bedroom, steady real-estate walkthrough, soft daylight, no people.",
+main_mirror_robe,main_mirror_robe.png,interior,"A slow steady camera pan to the left across the bedroom with the mirrored wardrobe, real-estate walkthrough, natural light, no people.",hard case: mirror
+main_fan_blind,main_fan_blind.png,interior,"Almost static camera with a very slow push-in, the ceiling fan turns gently, the blinds hang still, real-estate photo, daylight, no people.",hard case: moving fan

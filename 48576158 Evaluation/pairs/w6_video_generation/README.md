@@ -1,8 +1,13 @@
 # Week 6 - Video generation
 
-Status: NOT STARTED  |  Models: Wan 2.2 vs HunyuanVideo 1.5  |  Compute: A100 80GB (or 4090 with FP8)
+Status: CODE WRITTEN, NOT YET RUN (Mon 2 Nov)  |  Models: Wan2.2 TI2V-5B vs HunyuanVideo 1.5 (480p I2V, step-distilled)  |  Compute: Colab A100-40GB, install check on T4
 
-Scenario for this pair: Promo clips for listings from a still or a prompt.
+Scenario for this pair: promo/walkthrough clips for listings generated from ONE listing photo plus a camera-motion prompt (image-to-video).
+
+Design (budget-driven, say so in the report): 6 listing photos (W2 copies, cropped 16:9), 1 seed, 73 frames at 24 fps (3.04 s), same photo / prompt / seed for both models.
+Each model at its recommended setting: Wan 704x1280, 50 steps, CFG 5; Hunyuan 480x848, 8 step-distilled steps, model CPU offload. This is a system-level comparison, not a matched-pixel one.
+Metrics (`score_w6.py`): clip_t, clip_i/dino vs the source photo (mean, min), dino_consec, first_frame_ssim, motion_mad, jitter_ratio, luma_drift, mismatch controls, latency, VRAM, file size.
+Files: `install_w6.py`, `prepare_inputs.py`, `gen_w6.py`, `score_w6.py`, `report_w6.py`, `items.csv`, notebook `colab/a1_week6.ipynb`, tests `tests/test_w6.py` (10 pass).
 
 ## A. Selection (rubric 1.5)
 ### A1. AI modelling techniques (0.5)
