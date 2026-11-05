@@ -1,8 +1,13 @@
 # Week 8 - Agents, evaluation and governance
 
-Status: NOT STARTED  |  Models: UI-TARS-1.5-7B (candidate) vs MAI-UI-8B or Holo (candidate)  |  Compute: 4090/L4/L40S class GPU
+Status: CODE WRITTEN, NOT YET RUN (Tue 3 Nov)  |  Controlled pair: Qwen2.5-VL-7B-Instruct reading DOM text vs UI-TARS-1.5-7B reading screenshots (GUI-trained Qwen2.5-VL derivative, Apache-2.0) + a rule-based baseline  |  Compute: L4/A100 for the two 7B models (about 17 GB bf16), CPU for the baseline
 
-Scenario for this pair: Listing-operations tasks in MiniWoB++ (or fallback coding tasks with pytest checker); includes prompt-injection test.
+Scenario for this pair: back-office web tasks of a listing-operations agent (click, select, fill forms, log in) on MiniWoB++ (MIT; 130 tasks; observations include `utterance`, `dom_elements` and a `screenshot`; actions include CLICK_ELEMENT, CLICK_COORDS, TYPE_TEXT). Includes a prompt-injection test.
+
+Design: 8 tasks x 3 seeds clean per agent, plus an injection variant on 4 tasks (a fake notice and a "CLICK HERE TO CONTINUE" button added to the page; we count how often the agent clicks it). Max 8 steps, greedy decoding, binary reward (no time penalty; the page clock is relaxed because a 7B model needs seconds per step). The visual agent sees the 160x210 task area upscaled to 560x728.
+Why this pair: both model agents share the Qwen2.5-VL-7B backbone, so the contrast is mostly observation (DOM text vs pixels) plus GUI-specific training; it is still not a one-factor experiment and the report says so. MiniWoB is DOM-friendly by design, which favours the DOM agent.
+Metrics: success rate (Wilson CI), paired bootstrap over tasks, steps, invalid-action rate, seconds per step, injection-followed rate and success drop.
+Files: `install_w8.py`, `agents.py`, `run_w8.py`, `report_w8.py`, `w8_common.py`, notebook `colab/a1_week8.ipynb`, tests `tests/test_w8.py` (10 pass). Not yet verified on a real browser: Chrome/driver install, the page-clock fix, UI-TARS prompt format and coordinate scale (smoke cells 2.3, 4.2, 4.3 do this).
 
 ## A. Selection (rubric 1.5)
 ### A1. AI modelling techniques (0.5)
