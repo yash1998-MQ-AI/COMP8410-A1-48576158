@@ -1,0 +1,7 @@
+item_id,edit,prompt,x0,y0,x1,y1,n_frames,start_frame,source
+living_area,furniture,replace the brown leather sofa with a dark green velvet chesterfield sofa,0.0,0.42,0.6,1.0,81,69,data/raw/Set D/Living_area.mp4
+main_bedroom,furniture,replace the bed with a low oak platform bed with white linen,0.2,0.42,0.9,0.98,81,62,data/raw/Set D/Main_Bedroom.mp4
+bedroom_2,relight,relight the room with warm golden-hour sunlight through the window,0.0,0.0,1.0,1.0,81,87,data/raw/Set D/Bedroom_2.mp4
+bathroom,relight,relight the room with warm golden-hour sunlight through the window,0.0,0.0,1.0,1.0,81,58,data/raw/Set D/Bathroom.mp4
+kitchen_and_main_living_area,surface,change the floor to wide plank light oak timber flooring,0.25,0.6,0.72,1.0,81,59,data/raw/Set D/Kitchen_and_main_living_area.mp4
+storeroom_and_gym,surface,change the floor to light grey epoxy garage flooring,0.0,0.68,1.0,1.0,81,68,data/raw/Set D/Storeroom_and_gym.mp4

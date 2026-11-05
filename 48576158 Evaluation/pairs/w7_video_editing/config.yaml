@@ -1,10 +1,10 @@
 pair: w7
 title: "Week 7 - Video editing"
 models:
-  - name: "Wan2.1-VACE-14B"
+  - name: "Wan2.1-VACE-1.3B"
     version: ""        # exact repo id / commit / date downloaded
     licence: ""
-  - name: "Lucy-Edit-1.1-Dev"
+  - name: "Lucy-Edit-Dev"
     version: ""
     licence: ""
 compute: "A100 80GB"
