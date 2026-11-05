@@ -237,12 +237,15 @@ class UITarsAgent(_HFBase):
         shot = Image.fromarray(obs["screenshot"]).convert("RGB").resize((SHOT_W, SHOT_H), Image.BICUBIC)
         instr = str(obs["utterance"])
         if self.history:
-            instr += "\n\nPrevious actions: " + "; ".join(self.history)
+            instr += ("\n\nActions you have already performed, in order (each one took effect): " + "; ".join(self.history)
+                      + ". Note: clicking a text field focuses it even though no caret is visible, so do not repeat a click that is "
+                      "already listed; carry out the next step of the task (e.g. type the text, then submit).")
         msgs = [{"role": "user", "content": [{"type": "text", "text": UITARS_PROMPT.format(instruction=instr)},
                                              {"type": "image", "image": shot}]}]
         raw, n = self._gen(msgs, images=[shot])
         act = parse_uitars(raw)
-        self.history.append(act.brief())
+        m = re.search(r"Action:\s*(.+)", raw)
+        self.history.append((m.group(1).strip() if m else act.brief())[:120])
         return act, raw, n
 
 
