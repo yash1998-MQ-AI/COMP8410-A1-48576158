@@ -40,6 +40,26 @@ def mask_frames(box, n: int, width: int = WIDTH, height: int = HEIGHT):
     return [Image.fromarray(a).convert("RGB") for _ in range(n)]
 
 
+def blank_masked(video, box, fill: int = 127):
+    """Mid-grey out the edit box in every frame.
+
+    diffusers' WanVACEPipeline computes `reactive = video * mask`, so whatever sits inside the
+    mask is handed to the model as conditioning for that region. Passing the untouched frame
+    means VACE is conditioned on the object it was asked to replace, and it reconstructs it.
+    Mid-grey normalises to ~0 in the pipeline's [-1, 1] space, i.e. "nothing here, generate it".
+    """
+    from PIL import Image
+
+    out = []
+    for im in video:
+        g = im.copy()
+        d = Image.new("RGB", g.size, (fill, fill, fill))
+        x0, y0, x1, y1 = box_pixels(box, g.size[0], g.size[1])
+        g.paste(d.crop((x0, y0, x1, y1)), (x0, y0))
+        out.append(g)
+    return out
+
+
 def load_clip(path: Path, cap: int = MAX_FRAMES):
     """The prepared clip as PIL RGB images at WIDTHxHEIGHT, trimmed to a 4n+1 count <= cap.
 
@@ -95,19 +115,21 @@ def load_lucy():
 LOADERS = {"wan21_vace": load_vace, "lucy_edit": load_lucy}
 
 
-def generate(pipe, model: str, video, box, prompt: str, seed: int, steps: int):
+def generate(pipe, model: str, video, box, prompt: str, seed: int, steps: int, vace_blank: bool = True):
     import torch
 
     g = torch.Generator(device="cpu").manual_seed(seed)
     kw = dict(prompt=prompt, negative_prompt=NEGATIVE, height=HEIGHT, width=WIDTH,
               num_frames=len(video), num_inference_steps=steps, guidance_scale=GUIDANCE, generator=g)
     if model == "wan21_vace":
-        return pipe(video=video, mask=mask_frames(box, len(video)), **kw).frames[0]
+        vid = blank_masked(video, box) if vace_blank else video
+        return pipe(video=vid, mask=mask_frames(box, len(video)), **kw).frames[0]
     return pipe(video=video, **kw).frames[0]
 
 
 # ---------------------------------------------------------------- driver
-def run_model(model: str, ids, seeds, out_root: Path, results: Path, steps: int) -> tuple[int, int]:
+def run_model(model: str, ids, seeds, out_root: Path, results: Path, steps: int,
+              vace_blank: bool = True) -> tuple[int, int]:
     import torch
 
     t0 = time.perf_counter()
@@ -136,14 +158,15 @@ def run_model(model: str, ids, seeds, out_root: Path, results: Path, steps: int)
                 torch.cuda.reset_peak_memory_stats()
                 video = load_clip(src)
                 t = time.perf_counter()
-                frames = generate(pipe, model, video, box_of(item), prompt_of(item), seed, steps)
+                frames = generate(pipe, model, video, box_of(item), prompt_of(item), seed, steps, vace_blank)
                 dt = time.perf_counter() - t
                 write_mp4(frames, dst)
                 vram = torch.cuda.max_memory_allocated() / 1e9
                 append(results, Record(PAIR, model, item, "latency_s", dt, seed))
                 append(results, Record(PAIR, model, item, "peak_vram_gb", vram, seed))
                 side.write_text(json.dumps({"ok": True, "latency_s": dt, "peak_vram_gb": vram,
-                                            "n_frames": len(video), "steps": steps}, indent=1))
+                                            "n_frames": len(video), "steps": steps,
+                                            "vace_blank": bool(vace_blank) if model == "wan21_vace" else None}, indent=1))
                 ok += 1
                 print(f"[{model}] {item} s{seed}: {dt:.0f}s  {vram:.1f}GB  {len(video)}f -> {dst.name}", flush=True)
             except Exception as exc:
@@ -164,6 +187,8 @@ def main(argv=None) -> int:
     ap.add_argument("--out-root", type=Path, default=OUT_ROOT)
     ap.add_argument("--results", type=Path, default=RESULTS)
     ap.add_argument("--steps", type=int, default=STEPS)
+    ap.add_argument("--no-vace-blank", action="store_true",
+                    help="feed VACE the untouched frame (the original, broken conditioning) for comparison")
     ap.add_argument("--smoke", action="store_true", help="1 item, 6 steps, separate output folder")
     args = ap.parse_args(argv)
 
@@ -177,7 +202,8 @@ def main(argv=None) -> int:
     models = list(MODELS) if args.model == "both" else [args.model]
     total_ok = total_fail = 0
     for m in models:
-        ok, fail = run_model(m, ids, args.seeds, args.out_root, args.results, steps)
+        ok, fail = run_model(m, ids, args.seeds, args.out_root, args.results, steps,
+                             vace_blank=not args.no_vace_blank)
         total_ok, total_fail = total_ok + ok, total_fail + fail
     print(f"\nfinished: {total_ok} ok, {total_fail} failed")
     return 0 if total_fail == 0 else 1

@@ -140,3 +140,19 @@ def test_short_side_crop_is_square():
 
     out = short_side_crop(np.zeros((C.HEIGHT, C.WIDTH, 3), dtype=np.uint8))
     assert out.shape == (C.CROP, C.CROP, 3)
+
+
+def test_blank_masked_greys_only_the_box():
+    from PIL import Image
+
+    from gen_w7 import blank_masked
+
+    im = Image.new("RGB", (C.WIDTH, C.HEIGHT), (10, 200, 30))
+    box = (0.25, 0.5, 0.75, 1.0)
+    out = blank_masked([im, im], box)
+    assert len(out) == 2
+    a = np.asarray(out[0])
+    x0, y0, x1, y1 = C.box_pixels(box)
+    assert (a[y0 + 5, x0 + 5] == 127).all()          # inside the box is mid-grey
+    assert (a[5, 5] == (10, 200, 30)).all()          # outside is untouched
+    assert (a[y0 - 5, x0 + 5] == (10, 200, 30)).all()

@@ -28,10 +28,11 @@ HF_ID = {
 }
 
 SEEDS = (0,)                 # one seed per item: budget decision, stated in the report
-# Matched geometry: both pipelines default to 480x832 / 81 frames / 50 steps / CFG 5.0.
+# Matched geometry: both pipelines default to 480x832 / 81 frames / CFG 5.0. Step count is
+# reduced from the published default of 50 to 20 for BOTH models (compute budget) - declare this.
 HEIGHT, WIDTH = 480, 832
 MAX_FRAMES = 81              # must be 4n+1 for the Wan VAE used by both models
-STEPS = 50
+STEPS = 20              # budget decision: 50 steps for both models projects to ~55 units, 20 fits 29
 GUIDANCE = 5.0
 FPS = 24
 NEGATIVE = ""
