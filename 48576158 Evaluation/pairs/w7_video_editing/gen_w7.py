@@ -68,7 +68,7 @@ def load_clip(path: Path, cap: int = MAX_FRAMES):
     from PIL import Image
 
     sys.path.insert(0, str(HERE))
-    from prepare_inputs import read_frames
+    from pairs.w7_video_editing.prepare_inputs import read_frames
 
     frames, _ = read_frames(path)
     if not frames:

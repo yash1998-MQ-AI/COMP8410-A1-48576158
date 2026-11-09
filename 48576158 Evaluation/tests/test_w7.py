@@ -52,7 +52,7 @@ def test_mask_frames_white_inside_black_outside():
 
 
 def test_cover_resize_keeps_target_shape():
-    from prepare_inputs import cover_resize
+    from pairs.w7_video_editing.prepare_inputs import cover_resize
 
     for shape in ((720, 1280, 3), (1280, 720, 3), (480, 480, 3)):
         out = cover_resize(np.zeros(shape, dtype=np.uint8))

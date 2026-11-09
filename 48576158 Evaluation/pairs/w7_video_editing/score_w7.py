@@ -38,7 +38,7 @@ from a1eval import Record, append, load  # noqa: E402
 from w7_common import (CLIP_NAME, CROP, DINO_NAME, HEIGHT, MODELS, N_SCORE_FRAMES, OUT_ROOT, PAIR,  # noqa: E402
                        RESULTS, SEEDS, WIDTH, box_of, box_pixels, clip_path, item_ids, prompt_of,
                        video_path)
-from prepare_inputs import read_frames  # noqa: E402
+from pairs.w7_video_editing.prepare_inputs import read_frames  # noqa: E402
 
 
 # ---------------------------------------------------------------- pure functions (unit-tested)
