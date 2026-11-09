@@ -1,0 +1,8 @@
+{
+ "ok": true,
+ "latency_s": 481.0721134429998,
+ "peak_vram_gb": 20.107651584,
+ "n_frames": 81,
+ "steps": 20,
+ "vace_blank": true
+}

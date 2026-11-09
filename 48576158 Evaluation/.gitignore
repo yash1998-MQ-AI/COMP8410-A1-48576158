@@ -20,7 +20,7 @@ survey/answer_key.json
 survey/responses.csv
 
 # edited images and archives show private rooms; Colab results go in results/*.jsonl only
-outputs/
+
 *.zip
 logs/
 Presentation/*.mov

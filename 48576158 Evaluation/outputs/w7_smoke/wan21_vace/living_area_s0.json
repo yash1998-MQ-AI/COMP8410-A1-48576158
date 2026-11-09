@@ -1,0 +1,7 @@
+{
+ "ok": true,
+ "latency_s": 197.39907194199998,
+ "peak_vram_gb": 20.10778624,
+ "n_frames": 81,
+ "steps": 6
+}

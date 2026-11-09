@@ -1,0 +1,6 @@
+{"pair": "w7", "model": "wan21_vace", "item_id": "all", "metric": "load_time_s", "value": 73.027427655, "seed": null, "meta": {}, "ts": 1793862741.1554096}
+{"pair": "w7", "model": "wan21_vace", "item_id": "living_area", "metric": "latency_s", "value": 197.39907194199998, "seed": 0, "meta": {}, "ts": 1793862940.9045575}
+{"pair": "w7", "model": "wan21_vace", "item_id": "living_area", "metric": "peak_vram_gb", "value": 20.10778624, "seed": 0, "meta": {}, "ts": 1793862940.9077027}
+{"pair": "w7", "model": "lucy_edit", "item_id": "all", "metric": "load_time_s", "value": 172.40771587999996, "seed": null, "meta": {}, "ts": 1793863119.3752742}
+{"pair": "w7", "model": "lucy_edit", "item_id": "living_area", "metric": "latency_s", "value": 140.81999485999984, "seed": 0, "meta": {}, "ts": 1793863263.4645736}
+{"pair": "w7", "model": "lucy_edit", "item_id": "living_area", "metric": "peak_vram_gb", "value": 18.129678336, "seed": 0, "meta": {}, "ts": 1793863263.4678893}
